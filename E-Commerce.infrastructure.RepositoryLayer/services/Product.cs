@@ -103,12 +103,14 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     productDTO.CategoryName = content.SubCategoryModel.CategoryModel.CategoryName;
                     productDTO.BrandId = content.BrandModel.BrandId;
 
-                    
-                    productDTO.Image = _mapper.Map<List<ImageModel>, List<ImageDTO>>(_adminDbContext.Image.Where(i => i.ProductId == content.ProductId && i.Status == 0).Include(y=>y.ImageSrc).ToList());
-                    //ImageDTO imageDTO = new ImageDTO();
-                    //imageDTO.ImagePath = content.ImagePath;
 
-                    //imageDTO.ImageSrc = String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageDTO.ImagePath);
+                    productDTO.Image = _mapper.Map<List<ImageModel>, List<ImageDTO>>(_adminDbContext.Image.Where(i => i.ProductId == content.ProductId && i.Status == 0).ToList());
+                    ImageDTO imageDTO = new ImageDTO();
+                    //imageDTO.ImagePath = content.ImagePath;
+                    
+                    
+                    //imageDTO.ImageSrc= String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageDTO.ImagePath);
+                
                     list.Add(productDTO);
                     
 
@@ -223,8 +225,9 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 var subCategoryId = _adminDbContext.SubCategory.Where(x => x.SubCategoryId == product.SubCategoryId && x.Status == 0).Select(x => x.SubCategoryId).FirstOrDefault();
                 var BrandId = _adminDbContext.Brand.Where(x => x.BrandId == product.BrandId && x.Status == 0).Select(x => x.BrandId).FirstOrDefault();
                 _adminDbContext.Product.Add(productModel);
-                productId = productModel.ProductId;
                 _adminDbContext.SaveChanges();
+                productId = productModel.ProductId;
+
 
             }
             catch (Exception ex)
@@ -234,11 +237,12 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 Response.Data = false;
                 return Response;
             }
-            ImageModel imageModel = new ImageModel();
             try
             {
                 for (var i = 1; i <= product.productImage.Count; i++)
                 {
+                    ImageModel imageModel = new ImageModel();
+
                     imageModel.ProductId = productId;
                     imageModel.ImageName = "Image" + i;
                     imageModel.Priority = i;
@@ -251,7 +255,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             catch(Exception ex)
             {
                 Response.Success = false;
-                Response.Message = "moonji makkale";
+                Response.Message = "not added";
                 Response.Data = false;
                 return Response;
             }
