@@ -1,0 +1,405 @@
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.deps.json
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.runtimeconfig.json
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.dll
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.dll
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.pdb
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.pdb
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.AssemblyReference.cache
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfoInputs.cache
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfo.cs
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CopyComplete
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\refint\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.genruntimeconfig.cache
+D:\TeamProject\E-Commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\ref\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.deps.json
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.runtimeconfig.json
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.dll
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.dll
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.pdb
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.pdb
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.AssemblyReference.cache
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfoInputs.cache
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfo.cs
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CopyComplete
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\refint\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.genruntimeconfig.cache
+D:\e-commerce\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\ref\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.deps.json
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.runtimeconfig.json
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.dll
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.dll
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.pdb
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.pdb
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.AssemblyReference.cache
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfoInputs.cache
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfo.cs
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CopyComplete
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\refint\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.genruntimeconfig.cache
+D:\TeamProject\FlexKart\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\ref\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.deps.json
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.runtimeconfig.json
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.dll
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.dll
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.pdb
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.pdb
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.AssemblyReference.cache
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfoInputs.cache
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfo.cs
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CopyComplete
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\refint\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.genruntimeconfig.cache
+D:\Teamproject\asp.net\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\ref\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.deps.json
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.runtimeconfig.json
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.dll
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.dll
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.pdb
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.pdb
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.AssemblyReference.cache
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfoInputs.cache
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfo.cs
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CopyComplete
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\refint\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.genruntimeconfig.cache
+D:\TeamProject\Latest\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\ref\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.deps.json
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.runtimeconfig.json
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.pdb
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.pdb
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.AssemblyReference.cache
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfoInputs.cache
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfo.cs
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CopyComplete
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\refint\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.genruntimeconfig.cache
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 4\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\ref\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.deps.json
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.runtimeconfig.json
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.dll
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.dll
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.pdb
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.pdb
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.AssemblyReference.cache
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfoInputs.cache
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfo.cs
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CopyComplete
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\refint\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.genruntimeconfig.cache
+D:\TeamProject\New Dotnet\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\ref\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.deps.json
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.runtimeconfig.json
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.pdb
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.pdb
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.AssemblyReference.cache
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfoInputs.cache
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfo.cs
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CopyComplete
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\refint\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.genruntimeconfig.cache
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\ref\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csc.exe
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csc.exe.config
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csc.rsp
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csi.exe
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csi.exe.config
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csi.rsp
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CSharp.Core.targets
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.Managed.Core.targets
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.Win32.Primitives.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.AppContext.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Collections.Immutable.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Console.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Diagnostics.StackTrace.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Globalization.Calendars.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.Compression.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.Compression.ZipFile.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.FileSystem.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Net.Http.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Net.Sockets.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Reflection.Metadata.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Text.Encoding.CodePages.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.ValueTuple.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.ReaderWriter.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.XmlDocument.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.XPath.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.XPath.XDocument.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\vbc.exe
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\vbc.exe.config
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\vbc.rsp
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\VBCSCompiler.exe
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\VBCSCompiler.exe.config
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.deps.json
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.runtimeconfig.json
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csc.exe
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csc.exe.config
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csc.rsp
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csi.exe
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csi.exe.config
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csi.rsp
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CSharp.Core.targets
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.Managed.Core.targets
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.Win32.Primitives.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.AppContext.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Collections.Immutable.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Console.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Diagnostics.StackTrace.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Globalization.Calendars.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.Compression.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.Compression.ZipFile.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.FileSystem.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Net.Http.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Net.Sockets.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Reflection.Metadata.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Text.Encoding.CodePages.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.ValueTuple.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.ReaderWriter.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.XmlDocument.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.XPath.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.XPath.XDocument.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\vbc.exe
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\vbc.exe.config
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\vbc.rsp
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\VBCSCompiler.exe
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\VBCSCompiler.exe.config
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.pdb
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.pdb
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.AssemblyReference.cache
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfoInputs.cache
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfo.cs
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CopyComplete
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\refint\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.genruntimeconfig.cache
+D:\Alistair\office\1Demo\sprint2-dotnet\Aswathy 7 - Copy\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\ref\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.AssemblyReference.cache
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfoInputs.cache
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfo.cs
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\refint\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.deps.json
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.runtimeconfig.json
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csc.exe
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csc.exe.config
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csc.rsp
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csi.exe
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csi.exe.config
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csi.rsp
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CSharp.Core.targets
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.Managed.Core.targets
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.VisualBasic.Core.targets
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.Win32.Primitives.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.AppContext.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Collections.Immutable.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Console.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Diagnostics.StackTrace.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Globalization.Calendars.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.Compression.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.Compression.ZipFile.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.FileSystem.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.FileSystem.Primitives.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Net.Http.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Net.Sockets.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Reflection.Metadata.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.Encoding.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.Primitives.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Text.Encoding.CodePages.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Threading.Tasks.Extensions.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.ValueTuple.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.ReaderWriter.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.XmlDocument.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.XPath.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.XPath.XDocument.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\vbc.exe
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\vbc.exe.config
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\vbc.rsp
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\VBCSCompiler.exe
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\VBCSCompiler.exe.config
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.dll
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.pdb
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.pdb
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CopyComplete
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.genruntimeconfig.cache
+D:\TeamProject\New\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\ref\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.deps.json
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.runtimeconfig.json
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csc.exe
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csc.exe.config
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csc.rsp
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csi.exe
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csi.exe.config
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\csi.rsp
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.CSharp.Core.targets
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.Managed.Core.targets
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.VisualBasic.Core.targets
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\Microsoft.Win32.Primitives.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.AppContext.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Collections.Immutable.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Console.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Diagnostics.StackTrace.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Globalization.Calendars.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.Compression.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.Compression.ZipFile.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.FileSystem.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.IO.FileSystem.Primitives.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Net.Http.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Net.Sockets.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Reflection.Metadata.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.Encoding.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.Primitives.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Text.Encoding.CodePages.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Threading.Tasks.Extensions.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.ValueTuple.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.ReaderWriter.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.XmlDocument.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.XPath.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\System.Xml.XPath.XDocument.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\vbc.exe
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\vbc.exe.config
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\vbc.rsp
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\VBCSCompiler.exe
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\roslyn\VBCSCompiler.exe.config
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.pdb
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.pdb
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.AssemblyReference.cache
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfoInputs.cache
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.AssemblyInfo.cs
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.csproj.CopyComplete
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\refint\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.genruntimeconfig.cache
+D:\TeamProject\CopyNew\E-Commerce.infrastructure.RepositoryLayer\obj\Debug\net6.0\ref\E-Commerce.infrastructure.RepositoryLayer.dll

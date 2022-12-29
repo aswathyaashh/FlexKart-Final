@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "LxM3jzGyMPg5tgORTgHW36hnl13RlaHkH3ynp4Z69o0=",
+  "Source": "E-Commerce.api.APILayer",
+  "BasePath": "_content/E-Commerce.api.APILayer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
