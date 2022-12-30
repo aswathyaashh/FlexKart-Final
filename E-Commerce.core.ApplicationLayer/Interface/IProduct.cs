@@ -17,6 +17,8 @@ namespace E_Commerce.core.ApplicationLayer.Interface
         public ApiResponse<bool> GetByProductName(string Name);
         public ApiResponse<List<ProductDTO>> GetProductById(int id, String Scheme, HostString Host, PathString PathBase);
 
+        public ApiResponse<List<SubCategoryDTO>> GetSubcategory(string categoryName);
+
         public Task<ApiResponse<bool>> Post(ProductDTO product);
         //public ApiResponse<bool> Update(int id, ProductDTO product);
         public Task<ApiResponse<bool>> Update(int id, ProductDTO productDTO);

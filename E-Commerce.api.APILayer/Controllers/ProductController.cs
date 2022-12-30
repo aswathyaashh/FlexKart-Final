@@ -133,6 +133,24 @@ namespace E_Commerce.api.APILayer.Controllers
         }
         #endregion
 
+        #region(get SubcategoryList By Category )
+        /// <summary>  
+        ///  Get Product by id  
+        /// </summary>  
+        /// <param Display product details by id </param> 
+        [HttpPost]
+
+        [AllowAnonymous]
+        [SwaggerResponse(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
+        [SwaggerOperation(Summary = "Product View", Description = "Display product details by its id")]
+        public ApiResponse<List<SubCategoryDTO>> GetBySubcategory(string name)
+        {
+            return _product.GetSubcategory(name);
+        }
+        #endregion
+
+
     }
 }
 
