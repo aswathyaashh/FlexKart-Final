@@ -10,13 +10,13 @@ namespace E_Commerce.core.ApplicationLayer.DTOModel.Image
 {
     public class ImageDTO
     {
-        public int ImageId { get; set; }
+        //public int ImageId { get; set; }
         //public ProductDTO product{ get;set;}
-        //public string ProductName { get; set; }
-        public string ImageName { get; set; }
+       // public string ProductName { get; set; }
+       // public string ImageName { get; set; }
         public int Priority { get; set; }
 
-        public IFormFile Image { get; set; }
+        //public IFormFile Image { get; set; }
 
         public string ImagePath { get; set; }
 

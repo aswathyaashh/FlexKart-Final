@@ -7,6 +7,7 @@ using E_Commerce.infrastructure.RepositoryLayer.services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ServiceStack;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Net.Mime;
 
@@ -27,9 +28,9 @@ namespace E_Commerce.api.APILayer.Controllers
         }
 
         #region(Get)
-         /// <summary>  
-         /// API to Get all data  
-         /// </summary>  
+        /// <summary>  
+        /// API to Get all data  
+        /// </summary>  
         /// <returns>API for calling function to list products with their id</returns>  
         [HttpGet]
         [Route("get")]
@@ -49,17 +50,17 @@ namespace E_Commerce.api.APILayer.Controllers
         /// </summary>  
         /// <param API to add Product name in database</param> 
         [HttpPost]
-        [Route("Post")]
+        [Route("AddProduct")]
         [Consumes("multipart/form-data")]
         [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Posts new Product", Description = "Adds a new Product")]
 
-        public async Task<ApiResponse<bool>> AddProduct([FromForm] ProductDTO Product )
+        public async Task<ApiResponse<bool>> AddProduct([FromForm] ProductDTO Product)
         {
             return await _product.Post(Product);
-            
+
         }
         #endregion
 
@@ -106,10 +107,29 @@ namespace E_Commerce.api.APILayer.Controllers
         [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
-        [SwaggerOperation(Summary = "Gets product By Id", Description = "Display product details by its id")]
+        [SwaggerOperation(Summary = "Product View", Description = "Display product details by its id")]
         public ApiResponse<List<ProductDTO>> GetProductById(int id)
         {
             return _product.GetProductById(id, Request.Scheme, Request.Host, Request.PathBase);
+        }
+        #endregion
+
+        #region(Put)
+        /// <summary>  
+        /// API for Editing Product   
+        /// </summary>  
+        /// <param API to edit product name in database</param> 
+        [HttpPut]
+        [Route("Edit/{id}")]
+        [Consumes("multipart/form-data")]
+        [AllowAnonymous]
+        [SwaggerResponse(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
+        [SwaggerOperation(Summary = "Edit new product", Description = "Edit a new product")]
+        public async Task<ApiResponse<bool>> EditProduct(string id, [FromForm] ProductDTO productDTO)
+        {
+            return await _product.Update(id.ToInt(), productDTO);
+
         }
         #endregion
 
@@ -118,4 +138,4 @@ namespace E_Commerce.api.APILayer.Controllers
 
 
 
-       
+

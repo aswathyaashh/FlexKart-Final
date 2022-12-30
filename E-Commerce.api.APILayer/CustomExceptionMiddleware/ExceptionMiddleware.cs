@@ -1,6 +1,7 @@
 ﻿using Amazon.CodePipeline.Model;
 using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 using Microsoft.AspNetCore.Diagnostics;
+using Newtonsoft.Json;
 using System.Net;
 
 namespace E_Commerce.api.APILayer.CustomExceptionMiddleware
@@ -29,16 +30,17 @@ namespace E_Commerce.api.APILayer.CustomExceptionMiddleware
             }
         }
 
-        private async Task HandleExceptionAsync(HttpContext context, Exception exception)
+        private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-
-            await context.Response.WriteAsync(new ApiResponse<ExceptionMiddleware>()
+            var errorMessage = new ApiResponseBase
             {
                 Success = false,
                 Message = "An unexpected error occurred."
-            }.ToString());
+            };
+            string result = JsonConvert.SerializeObject(errorMessage);
+            return context.Response.WriteAsync(result);
         }
     }
 }
