@@ -108,7 +108,7 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Product View", Description = "Display product details by its id")]
-        public ApiResponse<List<ProductDTO>> GetProductById(int id)
+        public ApiResponse<List<ProductViewDTO>> GetProductById(int id)
         {
             return _product.GetProductById(id, Request.Scheme, Request.Host, Request.PathBase);
         }
@@ -120,7 +120,7 @@ namespace E_Commerce.api.APILayer.Controllers
         /// </summary>  
         /// <param API to edit product name in database</param> 
         [HttpPut]
-        [Route("Edit/{id}")]
+        [Route("EditProduct/{id}")]
         [Consumes("multipart/form-data")]
         [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
@@ -135,18 +135,18 @@ namespace E_Commerce.api.APILayer.Controllers
 
         #region(get SubcategoryList By Category )
         /// <summary>  
-        ///  Get Product by id  
+        ///  Get Subcategory by category id 
         /// </summary>  
-        /// <param Display product details by id </param> 
-        [HttpPost]
-
+        /// <param Display subcategory details by category id </param> 
+        [HttpGet]
+        [Route("getBySubcategory")]
         [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
-        [SwaggerOperation(Summary = "Product View", Description = "Display product details by its id")]
-        public ApiResponse<List<SubCategoryDTO>> GetBySubcategory(string name)
+        [SwaggerOperation(Summary = "Subcategory listing", Description = "Display product details by its id")]
+        public ApiResponse<List<SubCategoryDTO>> GetBySubcategory(int id)
         {
-            return _product.GetSubcategory(name);
+            return _product.GetSubcategory(id);
         }
         #endregion
 

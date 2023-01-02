@@ -18,5 +18,6 @@ namespace E_Commerce.core.ApplicationLayer.DTOModel.Product
         public string SubCategoryName { get; set; }
         public string BrandName { get; set; }
         public int SalesForceId { get; set; }
+
     }
 }

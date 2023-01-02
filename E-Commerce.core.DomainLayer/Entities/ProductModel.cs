@@ -11,7 +11,9 @@ namespace E_Commerce.core.DomainLayer.Entities
     public class ProductModel
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductId { get; set; } = 0;
+
         [StringLength(30, MinimumLength = 3)]
         public string ProductName { get; set; }
         public decimal Price { get; set; }

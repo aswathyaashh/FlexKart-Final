@@ -64,12 +64,9 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 }
                 else
                 {
-
                     response.Success = false;
                     response.Message = "Already Deleted";
                     return response;
-
-
                 }
             }
             else
@@ -87,22 +84,20 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         /// Gets ProductBy Id  
         /// </summary>  
         /// <returns>Get Product details by Id.</returns> 
-        public ApiResponse<List<ProductDTO>> GetProductById(int id, String Scheme, HostString Host, PathString PathBase)
+        public ApiResponse<List<ProductViewDTO>> GetProductById(int id, String Scheme, HostString Host, PathString PathBase)
         {
-            ApiResponse<List<ProductDTO>> response = new ApiResponse<List<ProductDTO>>();
-            var list = new List<ProductDTO>();
+            ApiResponse<List<ProductViewDTO>> response = new ApiResponse<List<ProductViewDTO>>();
+            var list = new List<ProductViewDTO>();
             var data = _adminDbContext.Product.Where(e => e.Status == 0 && e.ProductId == id).Include(x => x.SubCategoryModel).Include(y => y.BrandModel).Include(b => b.SubCategoryModel.CategoryModel).ToList();
             if (data != null && data.Count > 0)
             {
                 foreach (var content in data)
                 {
-                    ProductDTO productDTO = new ProductDTO();
-                    productDTO = _mapper.Map<ProductModel, ProductDTO>(content);
-                    productDTO.SubCategoryId = content.SubCategoryModel.SubCategoryId;
+                    ProductViewDTO productDTO = new ProductViewDTO();
+                    productDTO = _mapper.Map<ProductModel, ProductViewDTO>(content);
+                    productDTO.SubCategoryName= content.SubCategoryModel.SubCategoryName;
                     productDTO.CategoryName = content.SubCategoryModel.CategoryModel.CategoryName;
-                    productDTO.BrandId = content.BrandModel.BrandId;
-
-
+                    productDTO.BrandName = content.BrandModel.BrandName;       
                     productDTO.Image = _mapper.Map<List<ImageModel>, List<ImageDTO>>(_adminDbContext.Image.Where(i => i.ProductId == content.ProductId && i.Status == 0).ToList());
                     ImageDTO imageDTO = new ImageDTO();
 
@@ -113,7 +108,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
                     list.Add(productDTO);
 
-
                 }
 
                 response.Message = "Listed";
@@ -123,32 +117,32 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             }
             else
             {
-                response.Message = "Null";
+                response.Message = "Product doesn't exist or Id doesn't exist";
                 response.Success = false;
                 return response;
             }
         }
         #endregion
 
-
-        public ApiResponse<List<SubCategoryDTO>> GetSubcategory(string categoryName)
+        #region(getsubcategorylist)
+        public ApiResponse<List<SubCategoryDTO>> GetSubcategory(int categoryId)
         {
             ApiResponse<List<SubCategoryDTO>> response = new ApiResponse<List<SubCategoryDTO>>();
-            var get = _adminDbContext.Category.FirstOrDefault(e => e.CategoryName == categoryName);
+            var getCategory = _adminDbContext.Category.FirstOrDefault(e => e.CategoryId == categoryId);
             response.Message = "Category not found";
             response.Success = false;
 
-            if (get != null)
+            if (getCategory != null)
             {
-                var getter = _mapper.Map<List<SubCategoryModel>, List<SubCategoryDTO>>(_adminDbContext.SubCategory.Where(e => e.CategoryId == get.CategoryId).ToList());
+                var getSubcategory = _mapper.Map<List<SubCategoryModel>, List<SubCategoryDTO>>(_adminDbContext.SubCategory.Where(e => e.CategoryId == getCategory.CategoryId).ToList());
 
-                if (getter != null)
+                if (getSubcategory != null)
                 {
-                    if (get.Status == 0)
+                    if (getCategory.Status == 0)
                     {
-                        response.Message = "Listed";
+                        response.Message = "Subcategory Listed";
                         response.Success = true;
-                        response.Data = getter;
+                        response.Data = getSubcategory;
                         return response;
 
                     }
@@ -165,8 +159,9 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     response.Success = false;
                 }
             }
-                return response;            
+            return response;
         }
+        #endregion
 
         #region(Get ProductList)
         /// <summary>  
@@ -182,7 +177,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 foreach (var content in data)
                 {
-
                     ProductListDTO productListDTO = new ProductListDTO();
                     productListDTO.ProductId = content.ProductId;
                     productListDTO.ProductName = content.ProductName;
@@ -190,9 +184,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     productListDTO.Quantity = content.Quantity;
                     productListDTO.Description = content.Description;
                     productListDTO.SalesForceId = content.SalesForceId;
-
-
-                    //add ternary operator here
                     productListDTO.SubCategoryName = content.SubCategoryModel.SubCategoryName;
                     productListDTO.CategoryName = content.SubCategoryModel.CategoryModel.CategoryName;
                     productListDTO.BrandName = content.BrandModel.BrandName;
@@ -251,7 +242,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         }
         #endregion
 
-
         #region(POST)
         public async Task<ApiResponse<bool>> Post(ProductDTO product)
         {
@@ -263,6 +253,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
             if (productModel != null)
             {
+                productModel.CreatedDate = DateTime.UtcNow;
                 _adminDbContext.Product.Add(productModel);
                 _adminDbContext.SaveChanges();
 
@@ -274,15 +265,14 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     imageModel.ImageName = "Image" + i;
                     imageModel.Priority = i;
                     imageModel.ImagePath = await SaveLogo(product.productImage[i - 1]);
+                    imageModel.CreatedDate = DateTime.UtcNow;
                     _adminDbContext.Image.Add(imageModel);
                     _adminDbContext.SaveChanges();
-
                 }
                 Response.Success = true;
                 Response.Message = " Added";
                 Response.Data = true;
                 return Response;
-
             }
             else
             {
@@ -303,7 +293,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         /// <param Upload a product image  with current datetime in imagepath</param>
         public async Task<string> SaveLogo(IFormFile image)
         {
-
             string imagePath = new String(Path.GetFileNameWithoutExtension(image.FileName).Take(10).ToArray()).Replace(' ', '-');
             imagePath = imagePath + DateTime.Now.ToString("yyyyMMddhhmmfff") + Path.GetExtension(image.FileName);
             var path = Path.Combine(_hostEnvironment.ContentRootPath, "Images", imagePath);
@@ -327,7 +316,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
         {
             var update = _adminDbContext.Product.FirstOrDefault(e => e.ProductId == id);
-
             ApiResponse<bool> updateResponse = new ApiResponse<bool>();
 
             if (update == null)
@@ -345,8 +333,8 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 update.Description = productDTO.Description;
                 update.BrandId = productDTO.BrandId;
                 update.SubCategoryId = productDTO.SubCategoryId;
+                update.SalesForceId = productDTO.SalesForceId;
                 update.UpdatedDate = DateTime.UtcNow;
-
                 _adminDbContext.Product.Update(update);
                 _adminDbContext.SaveChanges();
                 updateResponse.Success = true;
@@ -368,15 +356,10 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                         _adminDbContext.Image.Add(imageModel);
                         _adminDbContext.SaveChanges();
                     }
-
                 }
                 return updateResponse;
-
             }
-
-
         }
-
     }
     #endregion
 

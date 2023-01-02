@@ -16,7 +16,7 @@ namespace E_Commerce.core.ApplicationLayer.DTOModel.Product
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public string Description { get; set; }
-        public string CategoryName { get; set; }
+        public int CategoryId { get; set; }
         public int SubCategoryId { get; set; }
         public int BrandId { get; set; }
         public int SalesForceId { get; set; }

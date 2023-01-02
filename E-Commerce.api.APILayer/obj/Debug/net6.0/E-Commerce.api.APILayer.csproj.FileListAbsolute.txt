@@ -1358,6 +1358,7 @@ D:\TeamProject\CopyNew\E-Commerce.api.APILayer\bin\Debug\net6.0\Microsoft.SqlSer
 D:\TeamProject\CopyNew\E-Commerce.api.APILayer\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\TeamProject\CopyNew\E-Commerce.api.APILayer\bin\Debug\net6.0\Mono.TextTemplating.dll
 D:\TeamProject\CopyNew\E-Commerce.api.APILayer\bin\Debug\net6.0\Moq.dll
+D:\TeamProject\CopyNew\E-Commerce.api.APILayer\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\TeamProject\CopyNew\E-Commerce.api.APILayer\bin\Debug\net6.0\NPOI.OOXML.dll
 D:\TeamProject\CopyNew\E-Commerce.api.APILayer\bin\Debug\net6.0\NPOI.OpenXml4Net.dll
 D:\TeamProject\CopyNew\E-Commerce.api.APILayer\bin\Debug\net6.0\NPOI.OpenXmlFormats.dll
@@ -1418,4 +1419,3 @@ D:\TeamProject\CopyNew\E-Commerce.api.APILayer\obj\Debug\net6.0\refint\E-Commerc
 D:\TeamProject\CopyNew\E-Commerce.api.APILayer\obj\Debug\net6.0\E-Commerce.api.APILayer.pdb
 D:\TeamProject\CopyNew\E-Commerce.api.APILayer\obj\Debug\net6.0\E-Commerce.api.APILayer.genruntimeconfig.cache
 D:\TeamProject\CopyNew\E-Commerce.api.APILayer\obj\Debug\net6.0\ref\E-Commerce.api.APILayer.dll
-D:\TeamProject\CopyNew\E-Commerce.api.APILayer\bin\Debug\net6.0\Newtonsoft.Json.dll
