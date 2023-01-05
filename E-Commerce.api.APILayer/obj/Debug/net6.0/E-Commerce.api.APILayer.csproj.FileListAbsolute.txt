@@ -1419,3 +1419,5 @@ D:\TeamProject\CopyNew\E-Commerce.api.APILayer\obj\Debug\net6.0\refint\E-Commerc
 D:\TeamProject\CopyNew\E-Commerce.api.APILayer\obj\Debug\net6.0\E-Commerce.api.APILayer.pdb
 D:\TeamProject\CopyNew\E-Commerce.api.APILayer\obj\Debug\net6.0\E-Commerce.api.APILayer.genruntimeconfig.cache
 D:\TeamProject\CopyNew\E-Commerce.api.APILayer\obj\Debug\net6.0\ref\E-Commerce.api.APILayer.dll
+D:\TeamProject\CopyNew\E-Commerce.api.APILayer\bin\Debug\net6.0\E-Commerce.core.ServiceLayer.dll
+D:\TeamProject\CopyNew\E-Commerce.api.APILayer\bin\Debug\net6.0\E-Commerce.core.ServiceLayer.pdb

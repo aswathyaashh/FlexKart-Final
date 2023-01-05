@@ -6,6 +6,7 @@ using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.ApplicationLayer.DTOModel.Brand;
 using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 using Org.BouncyCastle.Asn1.Ocsp;
+using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
 
 namespace E_Commerce.infrastructure.RepositoryLayer.services
 {
@@ -15,14 +16,16 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         private readonly AdminDbContext _adminDbContext;
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _hostEnvironment;
+        private readonly IBuyerService _buyerService;
         #endregion
 
         #region(Constructor)
-        public Brand(AdminDbContext adminDbContext, IMapper mapper, IWebHostEnvironment hostEnvironment)
+        public Brand(AdminDbContext adminDbContext, IMapper mapper, IWebHostEnvironment hostEnvironment, IBuyerService buyerService)
         {
             _adminDbContext = adminDbContext;
             _mapper = mapper;
             _hostEnvironment = hostEnvironment;
+            _buyerService = buyerService;
         }
         #endregion
 
@@ -74,12 +77,13 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             if (brand != null)
             {
                 brand.LogoPath = await SaveLogo(brand.Logo);
-               // brand.CreatedDate = DateTime.Now;
+                // brand.CreatedDate = DateTime.Now;
                 _adminDbContext.Brand.Add(brand);
                 _adminDbContext.SaveChanges();
                 addResponse.Success = true;
                 addResponse.Message = "New Brand created";
                 addResponse.Data = true;
+                var res = await _buyerService.Authentication();
                 return addResponse;
             }
             else
@@ -143,7 +147,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 response.Success = false;
                 response.Message = "Brand doesnt exists";
-                response.Data= false;
+                response.Data = false;
                 return response;
 
             }
@@ -164,7 +168,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 if (updateData.Status == 0)
                 {
-                    
+
                     if (BrandId.BrandName == null)
                     {
                         updateData.BrandName = updateData.BrandName;
@@ -174,7 +178,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                         updateData.BrandName = BrandId.BrandName;
 
                     }
-                    if (BrandId.Logo==null)
+                    if (BrandId.Logo == null)
                     {
                         updateData.LogoPath = updateData.LogoPath;
                     }
@@ -185,8 +189,8 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     }
                     updateResponse.Success = true;
                     updateResponse.Message = " Brand updated";
-                    updateResponse.Data=true;
-                   // updateData.UpdatedDate = DateTime.Now;                    
+                    updateResponse.Data = true;
+                    // updateData.UpdatedDate = DateTime.Now;                    
                     _adminDbContext.Brand.Update(updateData);
                     _adminDbContext.SaveChanges();
                     return updateResponse;
@@ -195,7 +199,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 {
                     updateResponse.Success = false;
                     updateResponse.Message = " Brand not updated";
-                    updateResponse.Data=false;
+                    updateResponse.Data = false;
                     return updateResponse;
                 }
             }
@@ -222,14 +226,26 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 if (brand.Status == 0)
                 {
-                    brand.Status = 1;
-                    //brand.UpdatedDate = DateTime.Now;
-                    _adminDbContext.Brand.Update(brand);
-                    _adminDbContext.SaveChanges();
-                    response.Success = true;
-                    response.Message = "Brand Deleted";
-                    response.Data = true;
-                    return response;
+                    ProductModel product = _adminDbContext.Product.FirstOrDefault(i => i.BrandId == brandId);
+                    if (product == null)
+                    {
+                        brand.Status = 1;
+                        brand.UpdatedDate = DateTime.Now;
+                        _adminDbContext.Brand.Update(brand);
+                        _adminDbContext.SaveChanges();
+                        response.Success = true;
+                        response.Message = "Brand Deleted";
+                        response.Data = true;
+                        return response;
+                    }
+                    else
+                    {
+                        response.Success = false;
+                        response.Message = "Brand can't be deleted";
+                        response.Data = false;
+                        return response;
+                    }
+
                 }
                 else
                 {
@@ -244,8 +260,8 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             response.Message = "ID doesn't exist.";
             return response;
         }
+            #endregion
 
-        #endregion
-
+        }
     }
-}
+

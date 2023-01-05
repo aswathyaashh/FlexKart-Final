@@ -19,7 +19,7 @@ namespace E_Commerce.core.ApplicationLayer.DTOModel.Product
         public int CategoryId { get; set; }
         public int SubCategoryId { get; set; }
         public int BrandId { get; set; }
-        public int SalesForceId { get; set; }
+        public string SalesForceId { get; set; }
         public List<IFormFile> productImage { get; set; }
         
         public List<ImageDTO> Image { get; set; }

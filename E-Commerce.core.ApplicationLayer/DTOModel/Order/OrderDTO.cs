@@ -16,6 +16,6 @@ namespace E_Commerce.core.ApplicationLayer.DTOModel.Order
         public int Quantity { get; set; }
         public decimal Price { get; set; }
         public string CustomerName { get; set; }
-        public int SalesForceId { get; set; }
+        public string SalesForceId { get; set; }
     }
 }

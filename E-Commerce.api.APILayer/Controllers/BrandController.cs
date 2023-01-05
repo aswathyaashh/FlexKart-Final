@@ -5,6 +5,9 @@ using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.ApplicationLayer.DTOModel.Brand;
 using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 using E_Commerce.core.ApplicationLayer.DTOModel;
+using ServiceStack;
+using System.Collections.Generic;
+using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -16,11 +19,13 @@ namespace E_Commerce.api.APILayer.Controllers
     [ApiController]
     public class BrandController : ControllerBase
     {
-        
-        private readonly IBrand _brand;       
-        public BrandController(IBrand brand)
+        private readonly IConfiguration _configuration;
+        private readonly IBrand _brand;
+        //private readonly ISalesConnection _connection;
+        public BrandController(IBrand brand, IConfiguration configuration)
         {
             _brand = brand;
+            _configuration = configuration;
            
         }
         #region(Get)
@@ -55,6 +60,8 @@ namespace E_Commerce.api.APILayer.Controllers
 
         public async Task<ApiResponse<bool>> Post([FromForm] string brandName, IFormFile logo)
         {
+            //_connection.Authentication();
+           // var values = _configuration.value.BuyerConfig;
             var brand = new BrandDTO();
             brand.BrandName = brandName;
             brand.Logo = logo;

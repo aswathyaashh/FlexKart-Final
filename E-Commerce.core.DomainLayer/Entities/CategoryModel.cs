@@ -20,7 +20,7 @@ namespace E_Commerce.core.DomainLayer.Entities
         }
         //public ICollection<ProductModel> Products { get; set; }
         
-        public int SalesForceId { get; set; }
+        public string SalesForceId { get; set; }
 
     }
 }

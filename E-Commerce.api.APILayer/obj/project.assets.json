@@ -2004,6 +2004,20 @@
           "bin/placeholder/E-Commerce.core.DomainLayer.dll": {}
         }
       },
+      "E-Commerce.core.ServiceLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "E-Commerce.core.ApplicationLayer": "1.0.0",
+          "Newtonsoft.Json": "13.0.2"
+        },
+        "compile": {
+          "bin/placeholder/E-Commerce.core.ServiceLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/E-Commerce.core.ServiceLayer.dll": {}
+        }
+      },
       "E-Commerce.infrastructure.RepositoryLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2018,6 +2032,7 @@
           "Microsoft.Extensions.Identity.Core": "7.0.0",
           "Moq": "4.18.2",
           "NPOI": "2.5.6",
+          "Newtonsoft.Json": "13.0.2",
           "Swashbuckle.AspNetCore.Annotations": "6.4.0"
         },
         "compile": {
@@ -5544,6 +5559,11 @@
       "path": "../E-Commerce.core.DomainLayer/E-Commerce.core.DomainLayer.csproj",
       "msbuildProject": "../E-Commerce.core.DomainLayer/E-Commerce.core.DomainLayer.csproj"
     },
+    "E-Commerce.core.ServiceLayer/1.0.0": {
+      "type": "project",
+      "path": "../ServiceLayer/E-Commerce.core.ServiceLayer.csproj",
+      "msbuildProject": "../ServiceLayer/E-Commerce.core.ServiceLayer.csproj"
+    },
     "E-Commerce.infrastructure.RepositoryLayer/1.0.0": {
       "type": "project",
       "path": "../E-Commerce.infrastructure.RepositoryLayer/E-Commerce.infrastructure.RepositoryLayer.csproj",
@@ -5554,6 +5574,7 @@
     "net6.0": [
       "AWSSDK >= 2.3.55.2",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
+      "E-Commerce.core.ServiceLayer >= 1.0.0",
       "E-Commerce.infrastructure.RepositoryLayer >= 1.0.0",
       "MicroElements.Swashbuckle.FluentValidation >= 5.7.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.11",
@@ -5600,6 +5621,9 @@
           "projectReferences": {
             "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.infrastructure.RepositoryLayer.csproj": {
               "projectPath": "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.infrastructure.RepositoryLayer.csproj"
+            },
+            "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commerce.core.ServiceLayer.csproj": {
+              "projectPath": "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commerce.core.ServiceLayer.csproj"
             }
           }
         }

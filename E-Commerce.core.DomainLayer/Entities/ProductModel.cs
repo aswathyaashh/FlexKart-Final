@@ -39,7 +39,7 @@ namespace E_Commerce.core.DomainLayer.Entities
         [ForeignKey("BrandModel")]
         public int BrandId { get; set; }
         public BrandModel BrandModel { get; set; }
-        public int SalesForceId { get; set; }
+        public string SalesForceId { get; set; }
 
 
     }

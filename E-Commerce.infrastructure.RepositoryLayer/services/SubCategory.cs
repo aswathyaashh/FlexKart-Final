@@ -36,25 +36,42 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 if (subCategory.Status == 0)
                 {
-                    subCategory.Status = 1;
-                    _adminDbContext.SubCategory.Update(subCategory);
-                    _adminDbContext.SaveChanges();
-                    response.Success = true;
-                    response.Message = "Deleted";
+                    ProductModel product = _adminDbContext.Product.FirstOrDefault(i => i.SubCategoryId == subCategoryId);
+                    if (product == null)
+                    {
+                        subCategory.Status = 1;
+                        subCategory.UpdatedDate = DateTime.UtcNow;
+                        _adminDbContext.SubCategory.Update(subCategory);
+                        _adminDbContext.SaveChanges();
+                        response.Success = true;
+                        response.Message = "Subcategory Deleted";
+                        response.Data = true;
+                        return response;
+                    }
+                    else
+                    {
+                        response.Success = false;
+                        response.Message = "Sub-Category can't be deleted";
+                        response.Data = false;
+                        return response;
+                    }
+                }
+
+                else
+                {
+
+                    response.Success = false;
+                    response.Message = "Already Deleted";
+                    response.Data = false;
                     return response;
-                };
+
+                }
             }
-            else
-            {
 
-                response.Success = false;
-                response.Message = "Already Deleted";
-
-
-            }
             response.Success = false;
             response.Message = "ID doesn't exist.";
             return response;
+
         }
         #endregion
 

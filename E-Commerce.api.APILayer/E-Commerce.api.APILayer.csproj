@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\E-Commerce.infrastructure.RepositoryLayer\E-Commerce.infrastructure.RepositoryLayer.csproj" />
+    <ProjectReference Include="..\ServiceLayer\E-Commerce.core.ServiceLayer.csproj" />
   </ItemGroup>
 
   <ItemGroup>

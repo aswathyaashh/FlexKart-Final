@@ -142,14 +142,26 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 if (category.Status == 0)
                 {
-                    category.Status = 1;
-                  //  category.UpdatedDate = DateTime.Now;
-                    _adminDbContext.Category.Update(category);
-                    _adminDbContext.SaveChanges();
-                    response.Success = true;
-                    response.Message = "Category Deleted";
-                    response.Data = true;
-                    return response;
+                    SubCategoryModel subCategory = _adminDbContext.SubCategory.FirstOrDefault(i => i.CategoryId == categoryId);
+                    if (subCategory == null)
+                    {
+                        category.Status = 1;
+                        category.UpdatedDate = DateTime.Now;
+                        _adminDbContext.Category.Update(category);
+                        _adminDbContext.SaveChanges();
+                        response.Success = true;
+                        response.Message = "Category Deleted";
+                        response.Data = true;
+                        return response;
+                    }
+                    else
+                    {
+                        response.Success = false;
+                        response.Message = "Category can't be deleted";
+                        response.Data = false;
+                        return response;
+                    }
+
                 }
                 else
                 {

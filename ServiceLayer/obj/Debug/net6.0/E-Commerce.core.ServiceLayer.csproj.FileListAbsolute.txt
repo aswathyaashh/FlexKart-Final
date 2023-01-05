@@ -1,0 +1,17 @@
+D:\TeamProject\CopyNew\ServiceLayer\bin\Debug\net6.0\E-Commerce.core.ServiceLayer.deps.json
+D:\TeamProject\CopyNew\ServiceLayer\bin\Debug\net6.0\E-Commerce.core.ServiceLayer.dll
+D:\TeamProject\CopyNew\ServiceLayer\bin\Debug\net6.0\E-Commerce.core.ServiceLayer.pdb
+D:\TeamProject\CopyNew\ServiceLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.dll
+D:\TeamProject\CopyNew\ServiceLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.dll
+D:\TeamProject\CopyNew\ServiceLayer\bin\Debug\net6.0\E-Commerce.core.ApplicationLayer.pdb
+D:\TeamProject\CopyNew\ServiceLayer\bin\Debug\net6.0\E-Commerce.core.DomainLayer.pdb
+D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\E-Commerce.core.ServiceLayer.csproj.AssemblyReference.cache
+D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\E-Commerce.core.ServiceLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\E-Commerce.core.ServiceLayer.AssemblyInfoInputs.cache
+D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\E-Commerce.core.ServiceLayer.AssemblyInfo.cs
+D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\E-Commerce.core.ServiceLayer.csproj.CoreCompileInputs.cache
+D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\E-Commerce.core.ServiceLayer.csproj.CopyComplete
+D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\E-Commerce.core.ServiceLayer.dll
+D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\refint\E-Commerce.core.ServiceLayer.dll
+D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\E-Commerce.core.ServiceLayer.pdb
+D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\ref\E-Commerce.core.ServiceLayer.dll

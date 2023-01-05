@@ -24,7 +24,7 @@ namespace E_Commerce.core.DomainLayer.Entities
         [ForeignKey("CustomerModel")]
         public int CustomerId { get; set; }
         public CustomerModel CustomerModel { get; set; }
-        public int SalesForceId { get; set; }
+        public string SalesForceId { get; set; }
 
     }
 }

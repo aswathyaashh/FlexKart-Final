@@ -44,8 +44,8 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnOrder(2);
 
-                    b.Property<int>("SalesForceId")
-                        .HasColumnType("int");
+                    b.Property<string>("SalesForceId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int")
@@ -75,8 +75,8 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("SalesForceId")
-                        .HasColumnType("int");
+                    b.Property<string>("SalesForceId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -98,6 +98,9 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
 
                     b.Property<string>("CustomerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SalesForceId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
@@ -192,8 +195,8 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("SalesForceId")
-                        .HasColumnType("int");
+                    b.Property<string>("SalesForceId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
@@ -232,8 +235,8 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("SalesForceId")
-                        .HasColumnType("int");
+                    b.Property<string>("SalesForceId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -267,8 +270,8 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("SalesForceId")
-                        .HasColumnType("int");
+                    b.Property<string>("SalesForceId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");

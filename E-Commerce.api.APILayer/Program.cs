@@ -1,6 +1,9 @@
 using E_Commerce.api.APILayer.CustomExceptionMiddleware;
+//using E_Commerce.api.APILayer.SalesforceServices;
+//using E_Commerce.api.APILayer.Services;
 using E_Commerce.core.ApplicationLayer.DTOModel.Helpers;
 using E_Commerce.core.ApplicationLayer.Interface;
+using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
 using E_Commerce.infrastructure.RepositoryLayer;
 using E_Commerce.infrastructure.RepositoryLayer.services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -8,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using ServiceLayer;
 using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
 using System.Text;
@@ -78,6 +82,9 @@ builder.Services.AddScoped<ISubCategory, SubCategory>();
 builder.Services.AddScoped<IProduct, Product>();
 builder.Services.AddScoped<IOrder, Order>();
 builder.Services.AddScoped<ICustomer, Customer>();
+builder.Services.AddScoped<IBuyerService, BuyerService>();
+
+//builder.Services.AddScoped<IWebC>
 //builder.Services.AddScoped<IImage, Image>();
 //builder.Services.AddScoped<IProductAndImage, Com>();
 
