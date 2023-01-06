@@ -1159,6 +1159,7 @@
       "E-Commerce.core.ServiceLayer/1.0.0": {
         "dependencies": {
           "E-Commerce.core.ApplicationLayer": "1.0.0",
+          "E-Commerce.infrastructure.RepositoryLayer": "1.0.0",
           "Newtonsoft.Json": "13.0.2"
         },
         "runtime": {

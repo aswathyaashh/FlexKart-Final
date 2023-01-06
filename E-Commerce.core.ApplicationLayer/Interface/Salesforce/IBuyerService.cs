@@ -12,6 +12,6 @@ namespace E_Commerce.core.ApplicationLayer.Interface.Salesforce
     {
         Task<AuthenticationRes> Authentication();
 
-        //Task<BrandDTORes> AddBrand(BrandDTOReq brandDTOReq);
+        public Task<BrandDTORes> AddBrand(BrandDTOReq brandDTOReq, string accessToken);
     }
 }

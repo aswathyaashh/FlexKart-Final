@@ -17,12 +17,15 @@ namespace E_Commerce.core.DomainLayer.Entities
         [ForeignKey("ProductModel")]
         public int ProductId { get; set; }
         public ProductModel ProductModel { get; set; }
+
+        [StringLength(30, MinimumLength = 3)]
         public string ImageName { get; set; }
         public int Priority { get; set; }
 
         [NotMapped]
         public IFormFile Image { get; set; }
 
+        [StringLength(30, MinimumLength = 3)]
         public string ImagePath { get; set; }
 
         [NotMapped]

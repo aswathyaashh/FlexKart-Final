@@ -16,6 +16,8 @@ namespace E_Commerce.core.DomainLayer.Entities
         [ForeignKey("CategoryModel")]
         public int CategoryId { get; set; }
         public CategoryModel CategoryModel { get; set; }
+
+        [StringLength(30, MinimumLength = 3)]
         public string SalesForceId { get; set; }
 
     }

@@ -504,6 +504,9 @@
             "projectReferences": {
               "D:\\TeamProject\\CopyNew\\E-Commerce.core.ApplicationLayer\\E-Commerce.core.ApplicationLayer.csproj": {
                 "projectPath": "D:\\TeamProject\\CopyNew\\E-Commerce.core.ApplicationLayer\\E-Commerce.core.ApplicationLayer.csproj"
+              },
+              "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.infrastructure.RepositoryLayer.csproj": {
+                "projectPath": "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.infrastructure.RepositoryLayer.csproj"
               }
             }
           }

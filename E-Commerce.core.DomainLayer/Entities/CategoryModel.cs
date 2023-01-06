@@ -19,7 +19,7 @@ namespace E_Commerce.core.DomainLayer.Entities
             //UpdatedDate = DateTime.UtcNow;
         }
         //public ICollection<ProductModel> Products { get; set; }
-        
+        [StringLength(30, MinimumLength = 3)]
         public string SalesForceId { get; set; }
 
     }

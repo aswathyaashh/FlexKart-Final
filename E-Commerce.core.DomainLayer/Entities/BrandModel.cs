@@ -13,6 +13,7 @@ namespace E_Commerce.core.DomainLayer.Entities
     {
         [Key]
         [Column(Order = 0)]
+       
         public int BrandId { get; set; } = 0;
 
         [Column(Order = 1)]
@@ -22,6 +23,7 @@ namespace E_Commerce.core.DomainLayer.Entities
         public IFormFile Logo { get; set; } 
 
         [Column(Order = 2)]
+        [StringLength(30, MinimumLength = 3)]
         public string LogoPath { get; set; }
 
         [NotMapped]
@@ -40,6 +42,7 @@ namespace E_Commerce.core.DomainLayer.Entities
             //UpdatedDate = DateTime.UtcNow;
         }
         //public ICollection<ProductModel> Products { get; set; }
+        [StringLength(30, MinimumLength = 3)]
         public string SalesForceId { get; set; }
     }
 }

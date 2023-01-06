@@ -18,6 +18,8 @@ namespace E_Commerce.core.DomainLayer.Entities
         public string ProductName { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
+
+        [StringLength(150, MinimumLength = 3)]
         public string Description { get; set; }
         public int Status { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
@@ -39,6 +41,8 @@ namespace E_Commerce.core.DomainLayer.Entities
         [ForeignKey("BrandModel")]
         public int BrandId { get; set; }
         public BrandModel BrandModel { get; set; }
+
+        [StringLength(30, MinimumLength = 3)]
         public string SalesForceId { get; set; }
 
 

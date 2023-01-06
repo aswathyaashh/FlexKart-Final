@@ -11,6 +11,7 @@ namespace E_Commerce.core.DomainLayer.Entities
         [EmailAddress(ErrorMessage = "*EmailId should be in the format adc@gmail.com")]
         public string EmailId { get; set; }
 
+        [StringLength(30, MinimumLength = 3)]
         public string Password { get; set; }
         //public int id { get; set; }
 

@@ -15,3 +15,5 @@ D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\E-Commerce.core.ServiceLaye
 D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\refint\E-Commerce.core.ServiceLayer.dll
 D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\E-Commerce.core.ServiceLayer.pdb
 D:\TeamProject\CopyNew\ServiceLayer\obj\Debug\net6.0\ref\E-Commerce.core.ServiceLayer.dll
+D:\TeamProject\CopyNew\ServiceLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.dll
+D:\TeamProject\CopyNew\ServiceLayer\bin\Debug\net6.0\E-Commerce.infrastructure.RepositoryLayer.pdb

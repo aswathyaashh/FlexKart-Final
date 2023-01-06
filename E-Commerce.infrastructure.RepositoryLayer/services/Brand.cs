@@ -7,6 +7,8 @@ using E_Commerce.core.ApplicationLayer.DTOModel.Brand;
 using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 using Org.BouncyCastle.Asn1.Ocsp;
 using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
+using E_Commerce.core.ApplicationLayer.BuyerModuleDTO;
+using Microsoft.AspNetCore.Mvc;
 
 namespace E_Commerce.infrastructure.RepositoryLayer.services
 {
@@ -17,6 +19,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _hostEnvironment;
         private readonly IBuyerService _buyerService;
+       
         #endregion
 
         #region(Constructor)
@@ -80,10 +83,19 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 // brand.CreatedDate = DateTime.Now;
                 _adminDbContext.Brand.Add(brand);
                 _adminDbContext.SaveChanges();
+                AuthenticationRes auth =await _buyerService.Authentication();
+                BrandDTOReq brandDTOReq = new BrandDTOReq();
+                brandDTOReq.Name = brand.BrandName;
+                brandDTOReq.BrandDotNetId__c = brand.BrandId.ToString();
+                var response = await _buyerService.AddBrand(brandDTOReq, auth.access_token);
+                var issuccess = _adminDbContext.Brand.Update(new BrandModel { BrandId = int.Parse(brandDTOReq.BrandDotNetId__c), SalesForceId = response.id });
+
+
+
                 addResponse.Success = true;
                 addResponse.Message = "New Brand created";
                 addResponse.Data = true;
-                var res = await _buyerService.Authentication();
+                //var res = await _buyerService.Authentication();
                 return addResponse;
             }
             else
@@ -94,8 +106,11 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 return addResponse;
             }
 
+            
         }
         #endregion
+
+         
 
         #region(Function for Uploading logo)
         /// <summary>  
