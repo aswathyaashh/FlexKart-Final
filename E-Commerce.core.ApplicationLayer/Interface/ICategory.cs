@@ -8,9 +8,9 @@ namespace E_Commerce.core.ApplicationLayer.Interface
     {
       public ApiResponse<List<CategoryDTO>> Get();
       public ApiResponse<bool> Delete(int categoryId);
-      public ApiResponse<bool> Post(CategoryDTO categoryDTO);
+      public Task<ApiResponse<bool>> Post(CategoryDTO categoryDTO);
       public ApiResponse<bool> GetByCategoryName(string name);
-      public ApiResponse<bool> Update(int id, CategoryDTO categoryDTO);
+      public Task<ApiResponse<bool>> Update(int id, CategoryDTO categoryDTO);
 
     }
 }

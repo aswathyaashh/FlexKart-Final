@@ -13,7 +13,7 @@ namespace E_Commerce.core.DomainLayer.Entities
     {
         [Key]
         [Column(Order = 0)]
-       
+
         public int BrandId { get; set; } = 0;
 
         [Column(Order = 1)]

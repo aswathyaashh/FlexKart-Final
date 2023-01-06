@@ -87,9 +87,9 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Posts new category", Description = "Adds a new Category")]
-        public ApiResponse<bool> AddCategory(CategoryDTO categoryDTO)
+        public async Task<ApiResponse<bool>> AddCategory(CategoryDTO categoryDTO)
         {
-            return _category.Post(categoryDTO);
+            return await _category.Post(categoryDTO);
         }
         #endregion
 
@@ -104,7 +104,7 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Edit new category", Description = "Edit a new Category")]
-        public ApiResponse<bool> EditCategory(int id, CategoryDTO categoryDTO)
+        public Task<ApiResponse<bool>> EditCategory(int id, CategoryDTO categoryDTO)
         {
             return _category.Update(id, categoryDTO);
         }
