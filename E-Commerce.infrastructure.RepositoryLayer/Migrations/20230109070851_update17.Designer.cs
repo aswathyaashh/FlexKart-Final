@@ -4,6 +4,7 @@ using E_Commerce.infrastructure.RepositoryLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 {
     [DbContext(typeof(AdminDbContext))]
-    partial class AdminDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230109070851_update17")]
+    partial class update17
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,7 +62,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 
                     b.HasKey("BrandId");
 
-                    b.ToTable("Brand", (string)null);
+                    b.ToTable("Brand");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.CategoryModel", b =>
@@ -89,7 +92,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Category", (string)null);
+                    b.ToTable("Category");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.ImageModel", b =>
@@ -127,7 +130,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Image", (string)null);
+                    b.ToTable("Image");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.LoginModel", b =>
@@ -150,7 +153,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 
                     b.HasKey("EmailId");
 
-                    b.ToTable("Login", (string)null);
+                    b.ToTable("Login");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.ProductModel", b =>
@@ -200,7 +203,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 
                     b.HasIndex("SubCategoryId");
 
-                    b.ToTable("Product", (string)null);
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.SubCategoryModel", b =>
@@ -235,7 +238,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("SubCategory", (string)null);
+                    b.ToTable("SubCategory");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.ImageModel", b =>
