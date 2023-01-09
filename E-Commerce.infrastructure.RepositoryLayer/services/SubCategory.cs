@@ -4,8 +4,6 @@ using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.DomainLayer.Entities;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
-using E_Commerce.core.ApplicationLayer.BuyerModuleDTO;
-using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
 
 namespace E_Commerce.infrastructure.RepositoryLayer.services
 {
@@ -156,7 +154,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         ///  Add SubCategory by id  
         /// </summary>  
         /// <param add subcategory name in database</param> 
-        public  ApiResponse<bool> Post(SubCategoryDTO subCategory)
+        public ApiResponse<bool> Post(SubCategoryDTO subCategory)
         {
             var categoryId = _adminDbContext.Category.Where(x => x.CategoryName == subCategory.CategoryName && x.Status == 0).Select(x => x.CategoryId).FirstOrDefault();
             ApiResponse<bool> Response = new ApiResponse<bool>();
@@ -170,15 +168,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 };
                 _adminDbContext.Add(subCategoryModel);
                 _adminDbContext.SaveChangesAsync();
-
-                //SubCategoryDTOReq subCategoryDTOReq = new SubCategoryDTOReq();
-                //subCategoryDTOReq.Name = subCategoryModel.SubCategoryName;
-                //subCategoryDTOReq.SubCategoryDotNetId__c = subCategoryModel.SubCategoryId.ToString();
-               // var response = await _buyerService.AddSubCategory(subCategoryDTOReq);
-               // subCategoryModel.SalesForceId = response.id;
-               // _adminDbContext.Brand.Update(subCategoryModel);
-               // _adminDbContext.SaveChanges();
-
 
                 Response.Success = true;
                 Response.Message = "SubCategory is added";

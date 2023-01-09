@@ -26,9 +26,9 @@ namespace E_Commerce.core.ApplicationLayer.DTOModel.Helpers
 
             CreateMap<ProductModel, ProductViewDTO>().ReverseMap();
 
-            CreateMap<OrderModel1, OrderDTO>().ReverseMap();
+            CreateMap<OrderModel, OrderDTO>().ReverseMap();
 
-            CreateMap<CustomerModel1, CustomerDTO>().ReverseMap();
+            CreateMap<CustomerModel, CustomerDTO>().ReverseMap();
 
             CreateMap<ImageModel, ImageDTO>().ReverseMap();
 

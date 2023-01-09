@@ -8,8 +8,7 @@ namespace E_Commerce.core.ApplicationLayer.DTOModel.Customer
 {
     public class CustomerDTO
     {
-        //public int CustomerId { get; set; }
+        public int CustomerId { get; set; }
         public string CustomerName { get; set; }
-        public string SalesforceCustemerId { get; set; }
     }
 }

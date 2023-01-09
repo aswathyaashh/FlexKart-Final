@@ -4,8 +4,6 @@ using E_Commerce.core.DomainLayer.Entities;
 using E_Commerce.core.ApplicationLayer.DTOModel;
 using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
-using E_Commerce.core.ApplicationLayer.BuyerModuleDTO;
-using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
 
 namespace E_Commerce.infrastructure.RepositoryLayer.services
 {
@@ -15,16 +13,15 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
         private readonly AdminDbContext _adminDbContext;
         private readonly IMapper _mapper;
-        private readonly IBuyerService _buyerService;
 
         #endregion
 
         #region(Constructor)
-        public Category(AdminDbContext adminDbContext, IMapper mapper, IBuyerService buyerService)
+        public Category(AdminDbContext adminDbContext, IMapper mapper)
         {
             _adminDbContext = adminDbContext;
             _mapper = mapper;
-            _buyerService = buyerService;
+
         }
         #endregion
 
@@ -98,7 +95,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         ///  Add Category by id  
         /// </summary>  
         /// <param add category name in database</param> 
-        public async Task<ApiResponse<bool>> Post([FromBody] CategoryDTO categoryDTO)
+        public ApiResponse<bool> Post([FromBody] CategoryDTO categoryDTO)
         {
             var categoryModel = new CategoryModel()
             {
@@ -107,14 +104,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
            // categoryModel.UpdatedDate = null;
             _adminDbContext.Category.Add(categoryModel);
-            _adminDbContext.SaveChanges();
-
-            CategoryDTOReq categoryDTOReq = new CategoryDTOReq();
-            categoryDTOReq.Name = categoryModel.CategoryName;
-            categoryDTOReq.CategoryDotNetId__c = categoryModel.CategoryId.ToString();
-            var response = await _buyerService.AddCategory(categoryDTOReq);
-            categoryModel.SalesForceId = response.id;
-            _adminDbContext.Category.Update(categoryModel);
             _adminDbContext.SaveChanges();
 
             var add = _adminDbContext.Category.FirstOrDefault(e => e.CategoryName == categoryModel.CategoryName);
@@ -160,13 +149,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                         category.UpdatedDate = DateTime.Now;
                         _adminDbContext.Category.Update(category);
                         _adminDbContext.SaveChanges();
-
-                        CategoryDTOReq categoryDTOReq = new CategoryDTOReq();
-                        categoryDTOReq.Name = category.CategoryName;
-                        categoryDTOReq.CategoryDotNetId__c = category.CategoryId.ToString();
-                        _buyerService.DeleteCategory(category.SalesForceId);
-                        _adminDbContext.Category.Remove(category);
-                        _adminDbContext.SaveChanges();
                         response.Success = true;
                         response.Message = "Category Deleted";
                         response.Data = true;
@@ -202,7 +184,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         ///  Edit Category by id  
         /// </summary>  
         /// <param edit category name in database</param> 
-        public async Task<ApiResponse<bool>> Update(int id, [FromBody] CategoryDTO categoryDTO)
+        public ApiResponse<bool> Update(int id, [FromBody] CategoryDTO categoryDTO)
         {
             var update = _adminDbContext.Category.FirstOrDefault(e => e.CategoryId == id);
             ApiResponse<bool> updateResponse = new ApiResponse<bool>();
@@ -222,13 +204,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 update.CategoryName = categoryDTO.CategoryName;
                // update.UpdatedDate = DateTime.Now;
                 _adminDbContext.Update(update);
-                _adminDbContext.SaveChanges();
-
-                CategoryDTOReq categoryDTOReq = new CategoryDTOReq();
-                categoryDTOReq.Name = update.CategoryName;
-                categoryDTOReq.CategoryDotNetId__c = update.CategoryId.ToString();
-                var response = await _buyerService.EditCategory(categoryDTOReq, update.SalesForceId);
-                _adminDbContext.Category.Update(update);
                 _adminDbContext.SaveChanges();
                 return updateResponse;
             }

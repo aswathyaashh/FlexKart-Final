@@ -14,8 +14,8 @@ namespace E_Commerce.infrastructure.RepositoryLayer
         public DbSet<BrandModel> Brand { get; set; }
         public DbSet<SubCategoryModel> SubCategory { get; set; }
         public DbSet<ProductModel> Product { get; set; }
-        //public DbSet<OrderModel1> Order { get; set; }
-        //public DbSet<CustomerModel1> Customer { get; set; }
+        public DbSet<OrderModel> Order { get; set; }
+        public DbSet<CustomerModel> Customer { get; set; }
         public DbSet<ImageModel> Image { get; set; }
 
 
