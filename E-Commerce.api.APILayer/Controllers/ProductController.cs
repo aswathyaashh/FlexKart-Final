@@ -59,7 +59,7 @@ namespace E_Commerce.api.APILayer.Controllers
 
         public async Task<ApiResponse<bool>> AddProduct([FromForm] ProductDTO Product)
         {
-            return await _product.Post(Product);
+            return await _product.Post(Product, Request.Scheme, Request.Host, Request.PathBase);
 
         }
         #endregion

@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using Azure;
+using E_Commerce.core.ApplicationLayer.BuyerModuleDTO;
 using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 using E_Commerce.core.ApplicationLayer.DTOModel.Image;
 using E_Commerce.core.ApplicationLayer.DTOModel.Product;
 using E_Commerce.core.ApplicationLayer.DTOModel.SubCategory;
 using E_Commerce.core.ApplicationLayer.Interface;
+using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
 using E_Commerce.core.DomainLayer.Entities;
 using ECommerce.infrastructure.RepositoryLayer.Migrations;
 using Microsoft.AspNetCore.Http;
@@ -28,15 +30,18 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         private readonly AdminDbContext _adminDbContext;
         private readonly IMapper _mapper;
         private readonly IHostEnvironment _hostEnvironment;
+        private readonly IBuyerService _buyerService;
+
         #endregion
 
 
         #region(Constructor)
-        public Product(AdminDbContext adminDbContext, IMapper mapper, IHostEnvironment hostEnvironment)
+        public Product(AdminDbContext adminDbContext, IMapper mapper, IHostEnvironment hostEnvironment, IBuyerService buyerService)
         {
             _adminDbContext = adminDbContext;
             _mapper = mapper;
             _hostEnvironment = hostEnvironment;
+            _buyerService = buyerService;
         }
         #endregion
 
@@ -58,6 +63,14 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     product.Status = 1;
                     _adminDbContext.Product.Update(product);
                     _adminDbContext.SaveChanges();
+
+                    ProductDTOReq productDTOReq = new ProductDTOReq();
+                    productDTOReq.Name = product.ProductName;
+                    productDTOReq.productDotNetId__c = product.ProductId.ToString();
+                    _buyerService.DeleteSubCategory(product.SalesForceId);
+                    _adminDbContext.Product.Update(product);
+                    _adminDbContext.SaveChanges();
+
                     response.Success = true;
                     response.Message = "Product Deleted";
                     return response;
@@ -243,7 +256,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         #endregion
 
         #region(POST)
-        public async Task<ApiResponse<bool>> Post(ProductDTO product)
+        public async Task<ApiResponse<bool>> Post(ProductDTO product, String Scheme, HostString Host, PathString PathBase)
         {
             ApiResponse<bool> Response = new ApiResponse<bool>();
 
@@ -269,6 +282,35 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     _adminDbContext.Image.Add(imageModel);
                     _adminDbContext.SaveChanges();
                 }
+                    ProductDTOReq productDTOReq = new ProductDTOReq();
+
+                    var brandIdData = _adminDbContext.Brand.Where(i => i.BrandId == productModel.BrandId).FirstOrDefault();
+                    var subCategoryIdData = _adminDbContext.SubCategory.Where(i => i.SubCategoryId == productModel.SubCategoryId).FirstOrDefault();
+
+                    var imageData = _adminDbContext.Image.Where(i => i.ProductId == productModel.ProductId).ToList();
+
+                    productDTOReq.Name = productModel.ProductName;
+                    productDTOReq.productDotNetId__c = productModel.ProductId.ToString();
+                    productDTOReq.Brand_FK__c = brandIdData.SalesForceId;
+                    productDTOReq.Sub_Category__c = subCategoryIdData.SalesForceId;
+                    productDTOReq.Price__c = productModel.Price.ToString();
+                    productDTOReq.Quantity__c = productModel.Quantity.ToString();
+                    productDTOReq.Specifications__c = productModel.Description;
+
+                    productDTOReq.ImageUrl1__c = String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[0].ImagePath);
+                    productDTOReq.ImageUrl2__c = String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[1].ImagePath);
+                    for(int i = 2; i < imageData.Count; i++)
+                    {
+                        productDTOReq.ImageUrl2__c = productDTOReq.ImageUrl2__c+","+ String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[i].ImagePath) ;
+                    }
+                
+
+                var response = await _buyerService.AddProduct(productDTOReq);
+                    productModel.SalesForceId = response.id;
+                    _adminDbContext.Product.Update(productModel);
+                    _adminDbContext.SaveChanges();
+
+                
                 Response.Success = true;
                 Response.Message = " Added";
                 Response.Data = true;
@@ -356,6 +398,23 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                         _adminDbContext.Image.Add(imageModel);
                         _adminDbContext.SaveChanges();
                     }
+
+                        ProductDTOReq productDTOReq = new ProductDTOReq();
+                        var brandData = _adminDbContext.Brand.Where(i => i.BrandId == update.BrandId).FirstOrDefault();
+                        var subCategoryData = 
+                        productDTOReq.Name = update.ProductName;
+                        productDTOReq.productDotNetId__c = update.ProductId.ToString();
+                        productDTOReq.Brand_FK__c = update.BrandModel.SalesForceId;
+                        productDTOReq.Sub_Category__c = update.SubCategoryModel.SalesForceId;
+                        productDTOReq.Price__c = update.Price.ToString();
+                        productDTOReq.Quantity__c = update.Quantity.ToString();
+                        productDTOReq.Specifications__c = update.Description;
+                        var response = await _buyerService.EditProduct(productDTOReq, update.SalesForceId);
+                        _adminDbContext.Product.Update(update);
+                        _adminDbContext.SaveChanges();
+                        
+
+                    
                 }
                 return updateResponse;
             }

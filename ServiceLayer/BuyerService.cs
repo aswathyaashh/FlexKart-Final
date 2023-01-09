@@ -253,6 +253,74 @@ namespace ServiceLayer
             }
             return new SubCategoryDTORes();
         }
+
+
+
+        public async Task<ProductDTORes> AddProduct(ProductDTOReq productDTOReq)
+        {
+            var authenticationRes = await Authentication();
+            var buyerConfig = _configuration.GetSection("BuyerConfig");
+            string url = buyerConfig.GetSection("ProductAddUrl").Value;
+            var payload = JsonConvert.SerializeObject(productDTOReq);
+            using StringContent content = new StringContent(payload, Encoding.UTF8, "application/json");
+
+            using var client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {authenticationRes.access_token}");
+            
+            using HttpResponseMessage httpResponse = await client.PostAsync(url, content);
+
+            if (httpResponse.StatusCode == HttpStatusCode.OK ||
+                httpResponse.StatusCode == HttpStatusCode.Accepted || httpResponse.StatusCode == HttpStatusCode.Created)
+            {
+                var result = await httpResponse.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<ProductDTORes>(result);
+            }
+            return new ProductDTORes();
+        }
+
+        public async Task<ProductDTORes> EditProduct(ProductDTOReq productDTOReq, string id)
+        {
+            var authenticationRes = await Authentication();
+            var buyerConfig = _configuration.GetSection("BuyerConfig");
+            String url = buyerConfig.GetSection("ProductEditUrl").Value;
+            string postUrl = url + id;
+            var payload = JsonConvert.SerializeObject(productDTOReq);
+            using StringContent content = new StringContent(payload, Encoding.UTF8, "application/json");
+
+            using var client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {authenticationRes.access_token}");
+            using HttpResponseMessage httpResponse = await client.PatchAsync(postUrl, content);
+
+            if (httpResponse.StatusCode == HttpStatusCode.OK ||
+                httpResponse.StatusCode == HttpStatusCode.Accepted || httpResponse.StatusCode == HttpStatusCode.Created)
+            {
+                var result = await httpResponse.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<ProductDTORes>(result);
+            }
+            return new ProductDTORes();
+        }
+
+        public async Task<ProductDTORes> DeleteProduct(string id)
+        {
+            var authenticationRes = await Authentication();
+            var buyerConfig = _configuration.GetSection("BuyerConfig");
+            String url = buyerConfig.GetSection("ProductDeleteUrl").Value;
+            string postUrl = url + id;
+            //var payload = JsonConvert.SerializeObject(brandDTOReq);
+            //using StringContent content = new StringContent(payload, Encoding.UTF8, "application/json");
+
+            using var client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {authenticationRes.access_token}");
+            using HttpResponseMessage httpResponse = await client.DeleteAsync(postUrl);
+
+            if (httpResponse.StatusCode == HttpStatusCode.OK ||
+                httpResponse.StatusCode == HttpStatusCode.Accepted || httpResponse.StatusCode == HttpStatusCode.Created)
+            {
+                var result = await httpResponse.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<ProductDTORes>(result);
+            }
+            return new ProductDTORes();
+        }
     }
 }
 

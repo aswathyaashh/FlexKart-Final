@@ -1,4 +1,5 @@
 ﻿using E_Commerce.core.ApplicationLayer.BuyerModuleDTO;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using System;
 using System.Collections.Generic;
@@ -24,5 +25,8 @@ namespace E_Commerce.core.ApplicationLayer.Interface.Salesforce
         public Task<SubCategoryDTORes> EditSubCategory(SubCategoryDTOReq subCategoryDTOReq, string id);
         public Task<SubCategoryDTORes> DeleteSubCategory(string id);
 
+        public Task<ProductDTORes> AddProduct(ProductDTOReq productDTOReq);
+        public Task<ProductDTORes> EditProduct(ProductDTOReq productDTOReq, string id);
+        public Task<ProductDTORes> DeleteProduct(string id);
     }
 }

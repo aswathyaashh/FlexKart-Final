@@ -19,7 +19,7 @@ namespace E_Commerce.core.ApplicationLayer.Interface
 
         public ApiResponse<List<SubCategoryDTO>> GetSubcategory(int categoryId);
 
-        public Task<ApiResponse<bool>> Post(ProductDTO product);
+        public Task<ApiResponse<bool>> Post(ProductDTO product, String Scheme, HostString Host, PathString PathBase);
         //public ApiResponse<bool> Update(int id, ProductDTO product);
         public Task<ApiResponse<bool>> Update(int id, ProductDTO productDTO);
 
