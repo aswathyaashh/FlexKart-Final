@@ -59,7 +59,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 
                     b.HasKey("BrandId");
 
-                    b.ToTable("Brand", (string)null);
+                    b.ToTable("Brand");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.CategoryModel", b =>
@@ -89,7 +89,31 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Category", (string)null);
+                    b.ToTable("Category");
+                });
+
+            modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.CustomerModel", b =>
+                {
+                    b.Property<int>("CustomerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
+
+                    b.Property<string>("CustomerName")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("SalesForceCustomerId")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("CustomerId");
+
+                    b.ToTable("Customer");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.ImageModel", b =>
@@ -127,7 +151,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Image", (string)null);
+                    b.ToTable("Image");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.LoginModel", b =>
@@ -150,7 +174,47 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 
                     b.HasKey("EmailId");
 
-                    b.ToTable("Login", (string)null);
+                    b.ToTable("Login");
+                });
+
+            modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.OrderModel", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SalesforceOrderId")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("OrderId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.ProductModel", b =>
@@ -200,7 +264,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 
                     b.HasIndex("SubCategoryId");
 
-                    b.ToTable("Product", (string)null);
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.SubCategoryModel", b =>
@@ -235,7 +299,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("SubCategory", (string)null);
+                    b.ToTable("SubCategory");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.ImageModel", b =>
@@ -245,6 +309,25 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("ProductModel");
+                });
+
+            modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.OrderModel", b =>
+                {
+                    b.HasOne("E_Commerce.core.DomainLayer.Entities.CustomerModel", "CustomerModel")
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("E_Commerce.core.DomainLayer.Entities.ProductModel", "ProductModel")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CustomerModel");
 
                     b.Navigation("ProductModel");
                 });

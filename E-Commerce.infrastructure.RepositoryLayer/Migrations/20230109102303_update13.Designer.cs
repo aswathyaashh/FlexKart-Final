@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ECommerce.infrastructure.RepositoryLayer.Migrations
 {
     [DbContext(typeof(AdminDbContext))]
-    [Migration("20230109070851_update17")]
-    partial class update17
+    [Migration("20230109102303_update13")]
+    partial class update13
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -95,6 +95,30 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                     b.ToTable("Category");
                 });
 
+            modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.CustomerModel", b =>
+                {
+                    b.Property<int>("CustomerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
+
+                    b.Property<string>("CustomerName")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("SalesForceCustomerId")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("CustomerId");
+
+                    b.ToTable("Customer");
+                });
+
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.ImageModel", b =>
                 {
                     b.Property<int>("ImageId")
@@ -154,6 +178,46 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                     b.HasKey("EmailId");
 
                     b.ToTable("Login");
+                });
+
+            modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.OrderModel", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SalesforceOrderId")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("Status")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("OrderId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.ProductModel", b =>
@@ -248,6 +312,25 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("ProductModel");
+                });
+
+            modelBuilder.Entity("E_Commerce.core.DomainLayer.Entities.OrderModel", b =>
+                {
+                    b.HasOne("E_Commerce.core.DomainLayer.Entities.CustomerModel", "CustomerModel")
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("E_Commerce.core.DomainLayer.Entities.ProductModel", "ProductModel")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CustomerModel");
 
                     b.Navigation("ProductModel");
                 });

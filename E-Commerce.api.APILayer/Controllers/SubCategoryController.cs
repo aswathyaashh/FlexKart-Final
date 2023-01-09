@@ -67,7 +67,7 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Posts new subcategory", Description = "Adds a new SubCategory")]
-        public ApiResponse<bool> AddSubCategory([FromBody] SubCategoryDTO Subcategory)
+        public Task<ApiResponse<bool>> AddSubCategory([FromBody] SubCategoryDTO Subcategory)
         {
             return _subCategory.Post(Subcategory);
         }
@@ -101,7 +101,7 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Edit new subcategory", Description = "Edit a new subCategory")]
-        public ApiResponse<bool> EditSubCategory(int id, SubCategoryDTO subCategory)
+        public Task<ApiResponse<bool>> EditSubCategory(int id, SubCategoryDTO subCategory)
         {
             return _subCategory.Update(id, subCategory);
         }

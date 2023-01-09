@@ -4,6 +4,8 @@ using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.DomainLayer.Entities;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
+using E_Commerce.core.ApplicationLayer.BuyerModuleDTO;
+using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
 
 namespace E_Commerce.infrastructure.RepositoryLayer.services
 {
@@ -12,13 +14,16 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         #region(Private Variables)
         private readonly AdminDbContext _adminDbContext;
         private readonly IMapper _mapper;
+        private readonly IBuyerService _buyerService;
+
         #endregion
 
         #region(Constructor)
-        public SubCategory(AdminDbContext adminDbContext, IMapper mapper)
+        public SubCategory(AdminDbContext adminDbContext, IMapper mapper, IBuyerService buyerService)
         {
             _adminDbContext = adminDbContext;
             _mapper = mapper;
+            _buyerService = buyerService;
         }
         #endregion
 
@@ -43,6 +48,14 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                         subCategory.UpdatedDate = DateTime.UtcNow;
                         _adminDbContext.SubCategory.Update(subCategory);
                         _adminDbContext.SaveChanges();
+
+                        SubCategoryDTOReq subCategoryDTOReq = new SubCategoryDTOReq();
+                        subCategoryDTOReq.Name = subCategory.SubCategoryName;
+                        subCategoryDTOReq.SubCategoryDotNetId__c = subCategory.SubCategoryId.ToString();
+                        _buyerService.DeleteSubCategory(subCategory.SalesForceId);
+                        _adminDbContext.SubCategory.Update(subCategory);
+                        _adminDbContext.SaveChanges();
+
                         response.Success = true;
                         response.Message = "Subcategory Deleted";
                         response.Data = true;
@@ -154,20 +167,31 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         ///  Add SubCategory by id  
         /// </summary>  
         /// <param add subcategory name in database</param> 
-        public ApiResponse<bool> Post(SubCategoryDTO subCategory)
+        public async Task<ApiResponse<bool>> Post(SubCategoryDTO subCategory)
         {
-            var categoryId = _adminDbContext.Category.Where(x => x.CategoryName == subCategory.CategoryName && x.Status == 0).Select(x => x.CategoryId).FirstOrDefault();
+            var categoryId = _adminDbContext.Category.Where(x => x.CategoryName == subCategory.CategoryName && x.Status == 0).FirstOrDefault();
             ApiResponse<bool> Response = new ApiResponse<bool>();
 
-            if (categoryId > 0)
+            if (categoryId.CategoryId > 0)
             {
                 var subCategoryModel = new SubCategoryModel()
                 {
                     SubCategoryName = subCategory.SubCategoryName,
-                    CategoryId = categoryId
+                    CategoryId = categoryId.CategoryId
                 };
                 _adminDbContext.Add(subCategoryModel);
-                _adminDbContext.SaveChangesAsync();
+                _adminDbContext.SaveChanges();
+
+
+                SubCategoryDTOReq subCategoryDTOReq = new SubCategoryDTOReq();
+                subCategoryDTOReq.Name = subCategoryModel.SubCategoryName;
+                subCategoryDTOReq.Parent_Category__c = categoryId.SalesForceId;
+                subCategoryDTOReq.SubCategoryDotNetId__c = subCategoryModel.SubCategoryId.ToString();
+                var response = await _buyerService.AddSubCategory(subCategoryDTOReq);
+                subCategoryModel.SalesForceId = response.id;
+                _adminDbContext.SubCategory.Update(subCategoryModel);
+                _adminDbContext.SaveChanges();
+
 
                 Response.Success = true;
                 Response.Message = "SubCategory is added";
@@ -189,7 +213,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         ///  Edit SubCategory by id  
         /// </summary>  
         /// <param edit subcategory name in database</param> 
-        public ApiResponse<bool> Update(int id, SubCategoryDTO subCategory)
+        public async Task<ApiResponse<bool>> Update(int id, SubCategoryDTO subCategory)
 
         {
             var update = _adminDbContext.SubCategory.FirstOrDefault(e => e.SubCategoryId == id);
@@ -224,7 +248,16 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                    // update.UpdatedDate = DateTime.Now;
                     _adminDbContext.Update(update);
                     _adminDbContext.SaveChanges();
+
+                    SubCategoryDTOReq subCategoryDTOReq = new SubCategoryDTOReq();
+                    subCategoryDTOReq.Name = update.SubCategoryName;
+                    subCategoryDTOReq.Parent_Category__c = update.CategoryId.ToString();
+                    subCategoryDTOReq.SubCategoryDotNetId__c = update.SubCategoryId.ToString();
+                    var response = await _buyerService.EditSubCategory(subCategoryDTOReq, update.SalesForceId);
+                    _adminDbContext.SubCategory.Update(update);
+                    _adminDbContext.SaveChanges();
                     return updateResponse;
+
                 }
             }
 

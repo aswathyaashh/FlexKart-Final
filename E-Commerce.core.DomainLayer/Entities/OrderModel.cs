@@ -14,23 +14,23 @@ namespace E_Commerce.core.DomainLayer.Entities
     {
         [Key]
         public int OrderId { get; set; }
-        public int ProductId { get; set; }
 
         [StringLength(30, MinimumLength = 3)]
-        public string ProductName { get; set; }
+        public string SalesforceOrderId { get; set; } 
+
+        [ForeignKey("ProductModel")]
+        public int ProductId { get; set; }
+        public ProductModel ProductModel { get; set; }
 
         [StringLength(30, MinimumLength = 3)]
         public string Status { get; set; }
-        public DateTime Date { get; set; } = DateTime.UtcNow;
+        public DateTime OrderDate { get; set; } 
         public int Quantity { get; set; }
         public decimal Price { get; set; }
 
         [ForeignKey("CustomerModel")]
         public int CustomerId { get; set; }
-        public CustomerModel CustomerModel { get; set; }
-
-        [StringLength(30, MinimumLength = 3)]
-        public string SalesForceId { get; set; }
+        public CustomerModel CustomerModel { get; set; }             
 
     }
 }

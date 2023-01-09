@@ -80,22 +80,23 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             if (brand != null)
             {
                 brand.LogoPath = await SaveLogo(brand.Logo);
-                // brand.CreatedDate = DateTime.Now;
+                brand.CreatedDate = DateTime.Now;
                 _adminDbContext.Brand.Add(brand);
                 _adminDbContext.SaveChanges();
-                AuthenticationRes auth =await _buyerService.Authentication();
+
+
                 BrandDTOReq brandDTOReq = new BrandDTOReq();
                 brandDTOReq.Name = brand.BrandName;
                 brandDTOReq.BrandDotNetId__c = brand.BrandId.ToString();
-                var response = await _buyerService.AddBrand(brandDTOReq, auth.access_token);
-                var issuccess = _adminDbContext.Brand.Update(new BrandModel { BrandId = int.Parse(brandDTOReq.BrandDotNetId__c), SalesForceId = response.id });
-
+                var response = await _buyerService.AddBrand(brandDTOReq);
+                brand.SalesForceId = response.id;
+                _adminDbContext.Brand.Update(brand);
+                _adminDbContext.SaveChanges();
 
 
                 addResponse.Success = true;
                 addResponse.Message = "New Brand created";
                 addResponse.Data = true;
-                //var res = await _buyerService.Authentication();
                 return addResponse;
             }
             else
@@ -205,7 +206,13 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     updateResponse.Success = true;
                     updateResponse.Message = " Brand updated";
                     updateResponse.Data = true;
-                    // updateData.UpdatedDate = DateTime.Now;                    
+                     updateData.UpdatedDate = DateTime.Now;                    
+                    _adminDbContext.Brand.Update(updateData);
+                    _adminDbContext.SaveChanges();
+                    BrandDTOReq brandDTOReq = new BrandDTOReq();
+                    brandDTOReq.Name = updateData.BrandName;
+                    brandDTOReq.BrandDotNetId__c = updateData.BrandId.ToString();
+                    var response = await _buyerService.EditBrand(brandDTOReq, updateData.SalesForceId);
                     _adminDbContext.Brand.Update(updateData);
                     _adminDbContext.SaveChanges();
                     return updateResponse;
@@ -248,6 +255,14 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                         brand.UpdatedDate = DateTime.Now;
                         _adminDbContext.Brand.Update(brand);
                         _adminDbContext.SaveChanges();
+
+                        BrandDTOReq brandDTOReq = new BrandDTOReq();
+                        brandDTOReq.Name = brand.BrandName;
+                        brandDTOReq.BrandDotNetId__c = brand.BrandId.ToString();
+                        _buyerService.DeleteBrand(brand.SalesForceId);
+                        _adminDbContext.Brand.Update(brand);
+                        _adminDbContext.SaveChanges();
+
                         response.Success = true;
                         response.Message = "Brand Deleted";
                         response.Data = true;
