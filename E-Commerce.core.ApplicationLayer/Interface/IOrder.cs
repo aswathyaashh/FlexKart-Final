@@ -11,9 +11,8 @@ namespace E_Commerce.core.ApplicationLayer.Interface
 {
     public interface IOrder
     {
-        public ApiResponse<List<OrderDTO>> Get();
+        public ApiResponse<List<OrderListDTO>> Get();
         public ApiResponse<bool> Post(OrderDTO order);
-        public ApiResponse<bool> Update(int id, OrderDTO order);
 
     }
 }

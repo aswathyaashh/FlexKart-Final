@@ -13,9 +13,8 @@ namespace E_Commerce.core.ApplicationLayer.Interface
 {
     public interface ICustomer 
     {
-        public ApiResponse<List<CustomerDTO>> Get();
-        public ApiResponse<bool> Delete(int customerId);
-        public ApiResponse<bool> Post(CustomerDTO customer);
-        public ApiResponse<bool> Update(int id, CustomerDTO customer);
+        public ApiResponse<List<CustomerListDTO>> Get();
+
+        public ApiResponse<int> Post(CustomerDTO customer);
     }
 }

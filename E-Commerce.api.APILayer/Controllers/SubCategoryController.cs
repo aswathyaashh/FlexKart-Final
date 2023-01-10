@@ -84,9 +84,9 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Gets SubCategory By Name", Description = "Checks if subcategory exists")]
-        public ApiResponse<bool> GetSubCategoryByName(string subcategoryName)
+        public ApiResponse<bool> GetSubCategoryByName(string subcategoryName,int id)
         {
-            return _subCategory.GetBySubCategoryName(subcategoryName);
+            return _subCategory.GetBySubCategoryName(subcategoryName, id);
         }
         #endregion
 

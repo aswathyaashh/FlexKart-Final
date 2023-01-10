@@ -60,83 +60,58 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             return null;
         }
         #endregion
-        public ApiResponse<List<CustomerDTO>> Get()
+        public ApiResponse<List<CustomerListDTO>> Get()
         {
-            //ApiResponse<List<CustomerDTO>> response = new ApiResponse<List<CustomerDTO>>();
-            //var data = _mapper.Map<List<CustomerModel1>, List<CustomerDTO>>(_adminDbContext.Customer.Where(e => e.Status == 0).ToList());
+            ApiResponse<List<CustomerListDTO>> response = new ApiResponse<List<CustomerListDTO>>();
+            var data = _mapper.Map<List<CustomerModel>, List<CustomerListDTO>>(_adminDbContext.Customer.Where(e => e.Status == 0).ToList());
 
-            //if (data != null && data.Count > 0)
-            //{
-            //    response.Message = "Customer's Listed";
-            //    response.Success = true;
-            //    response.Data = data;
-            //    return response;
-            //}
-            //else
-            //{
-            //    response.Message = "No Customer's Found";
-            //    response.Success = false;
-            //    return response;
-            //}
+            if (data != null && data.Count > 0)
+            {
+                response.Message = "Customer's Listed";
+                response.Success = true;
+                response.Data = data;
+                return response;
+            }
+            else
+            {
+                response.Message = "No Customer's Found";
+                response.Success = false;
+                return response;
+            }
             return null;
         }
 
-        public ApiResponse<bool> Post(CustomerDTO customer)
+        public ApiResponse<int> Post(CustomerDTO customer)
         {
-            //var customerModel = new CustomerModel1()
-            //{
-            //    CustomerName = customer.CustomerName
-            //};
+            var customerModel = new CustomerModel()
+            {
+                CustomerName = customer.CustomerName,
+                SalesForceCustomerId = customer.SalesforceCustemerId
+            };
 
-            //// categoryModel.UpdatedDate = null;
-            //_adminDbContext.Customer.Add(customerModel);
-            //_adminDbContext.SaveChanges();
+            _adminDbContext.Customer.Add(customerModel);
+            _adminDbContext.SaveChanges();
 
-            //var add = _adminDbContext.Customer.FirstOrDefault(e => e.CustomerName == customerModel.CustomerName);
-            //ApiResponse<bool> addResponse = new ApiResponse<bool>();
+            ApiResponse<int> addResponse = new ApiResponse<int>();
 
-            //if (add == null)
-            //{
-            //    addResponse.Success = false;
-            //    addResponse.Message = "Customer is not added";
-            //    addResponse.Data = false;
-            //    return addResponse;
-            //}
-            //else
-            //{
-            //    addResponse.Success = true;
-            //    addResponse.Message = "Customer is added";
-            //    addResponse.Data = true;
-            //    return addResponse;
+            if (customerModel == null)
+            {
+                addResponse.Success = false;
+                addResponse.Message = "Customer is not added";
+                return addResponse;
+            }
+            else
+            {
 
-            //}
+                addResponse.Success = true;
+                addResponse.Message = "Customer is added";
+                addResponse.Data = customerModel.CustomerId;
+                return addResponse;
+
+            }
             return null;
         }
 
-        public ApiResponse<bool> Update(int id, CustomerDTO customer)
-        {
-            //var update = _adminDbContext.Customer.FirstOrDefault(e => e.CustomerId == id);
-            //ApiResponse<bool> updateResponse = new ApiResponse<bool>();
 
-            //if (update == null)
-            //{
-            //    updateResponse.Success = false;
-            //    updateResponse.Message = "Customer doesnt exist";
-            //    updateResponse.Data = false;
-            //    return updateResponse;
-            //}
-            //else
-            //{
-            //    updateResponse.Success = true;
-            //    updateResponse.Message = "Customer is updated";
-            //    updateResponse.Data = true;
-            //    update.CustomerName = customer.CustomerName;
-            //    // update.UpdatedDate = DateTime.Now;
-            //    _adminDbContext.Update(update);
-            //    _adminDbContext.SaveChanges();
-            //    return updateResponse;
-            //}
-            return null;
-        }
     }
 }

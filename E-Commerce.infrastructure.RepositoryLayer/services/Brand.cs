@@ -209,6 +209,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                      updateData.UpdatedDate = DateTime.Now;                    
                     _adminDbContext.Brand.Update(updateData);
                     _adminDbContext.SaveChanges();
+
                     BrandDTOReq brandDTOReq = new BrandDTOReq();
                     brandDTOReq.Name = updateData.BrandName;
                     brandDTOReq.BrandDotNetId__c = updateData.BrandId.ToString();

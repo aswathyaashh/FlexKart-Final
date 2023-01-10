@@ -21,7 +21,7 @@ namespace E_Commerce.core.ApplicationLayer.Interface
 
         public Task<ApiResponse<bool>> Post(ProductDTO product, String Scheme, HostString Host, PathString PathBase);
         //public ApiResponse<bool> Update(int id, ProductDTO product);
-        public Task<ApiResponse<bool>> Update(int id, ProductDTO productDTO);
+        public Task<ApiResponse<bool>> Update(int id, ProductDTO productDTO, String Scheme, HostString Host, PathString PathBase);
 
 
 

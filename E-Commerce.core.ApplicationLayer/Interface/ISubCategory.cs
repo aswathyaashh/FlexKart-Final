@@ -7,7 +7,7 @@ namespace E_Commerce.core.ApplicationLayer.Interface
     {
         public ApiResponse<List<SubCategoryDTO>> Get();
         public ApiResponse<bool> Delete(int subCategoryId);
-        public ApiResponse<bool> GetBySubCategoryName(string Name);
+        public ApiResponse<bool> GetBySubCategoryName(string Name, int id);
         public Task<ApiResponse<bool>> Post(SubCategoryDTO subCategory);
         public Task<ApiResponse<bool>> Update(int id, SubCategoryDTO subCategory);
 

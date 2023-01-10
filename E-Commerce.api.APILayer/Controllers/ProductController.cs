@@ -129,7 +129,7 @@ namespace E_Commerce.api.APILayer.Controllers
         public async Task<ApiResponse<bool>> EditProduct(string id, [FromForm] ProductDTO productDTO)
         {
 
-            return await _product.Update(id.ToInt(), productDTO);
+            return await _product.Update(id.ToInt(), productDTO, Request.Scheme, Request.Host, Request.PathBase);
 
         }
         #endregion

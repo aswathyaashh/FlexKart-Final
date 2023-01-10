@@ -41,35 +41,24 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 if (subCategory.Status == 0)
                 {
-                    ProductModel product = _adminDbContext.Product.FirstOrDefault(i => i.SubCategoryId == subCategoryId);
-                    if (product == null)
-                    {
-                        subCategory.Status = 1;
-                        subCategory.UpdatedDate = DateTime.UtcNow;
-                        _adminDbContext.SubCategory.Update(subCategory);
-                        _adminDbContext.SaveChanges();
 
-                        SubCategoryDTOReq subCategoryDTOReq = new SubCategoryDTOReq();
-                        subCategoryDTOReq.Name = subCategory.SubCategoryName;
-                        subCategoryDTOReq.SubCategoryDotNetId__c = subCategory.SubCategoryId.ToString();
-                        _buyerService.DeleteSubCategory(subCategory.SalesForceId);
-                        _adminDbContext.SubCategory.Update(subCategory);
-                        _adminDbContext.SaveChanges();
+                    subCategory.Status = 1;
+                    subCategory.UpdatedDate = DateTime.UtcNow;
+                    _adminDbContext.SubCategory.Update(subCategory);
+                    _adminDbContext.SaveChanges();
 
-                        response.Success = true;
-                        response.Message = "Subcategory Deleted";
-                        response.Data = true;
-                        return response;
-                    }
-                    else
-                    {
-                        response.Success = false;
-                        response.Message = "Sub-Category can't be deleted";
-                        response.Data = false;
-                        return response;
-                    }
+                    SubCategoryDTOReq subCategoryDTOReq = new SubCategoryDTOReq();
+                    subCategoryDTOReq.Name = subCategory.SubCategoryName;
+                    subCategoryDTOReq.SubCategoryDotNetId__c = subCategory.SubCategoryId.ToString();
+                    _buyerService.DeleteSubCategory(subCategory.SalesForceId);
+                    _adminDbContext.SubCategory.Update(subCategory);
+                    _adminDbContext.SaveChanges();
+
+                    response.Success = true;
+                    response.Message = "Subcategory Deleted";
+                    response.Data = true;
+                    return response;
                 }
-
                 else
                 {
 
@@ -80,11 +69,9 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
                 }
             }
-
             response.Success = false;
             response.Message = "ID doesn't exist.";
             return response;
-
         }
         #endregion
 
@@ -130,8 +117,9 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         ///  Get SubCategory by name  
         /// </summary>  
         /// <param Display subcategory exist if it is subcategory existing otherwise SubCategory doesnt exists </param> 
-        public ApiResponse<bool> GetBySubCategoryName(string Name)
+        public ApiResponse<bool> GetBySubCategoryName(string Name,int id)
         {
+            //var entity = _adminDbContext.SubCategory.FirstOrDefault(e => e.SubCategoryName == Name &&  e.CategoryId==id);
             var entity = _adminDbContext.SubCategory.FirstOrDefault(e => e.SubCategoryName == Name);
             ApiResponse<bool> response = new ApiResponse<bool>();
 
@@ -228,10 +216,10 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             }
             else
             {
-                var categoryId = _adminDbContext.Category.Where(x => x.CategoryName == subCategory.CategoryName && x.Status == 0).Select(x => x.CategoryId).FirstOrDefault();
+                var categoryId = _adminDbContext.Category.Where(x => x.CategoryName == subCategory.CategoryName && x.Status == 0).FirstOrDefault();
 
 
-                if (categoryId == 0)
+                if (categoryId.CategoryId == 0)
                 {
                     updateResponse.Success = false;
                     updateResponse.Message = "Category doesnt exist";
@@ -244,14 +232,14 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     updateResponse.Message = "Updated";
                     updateResponse.Data = true;
                     update.SubCategoryName = subCategory.SubCategoryName;
-                    update.CategoryId = categoryId;
+                    update.CategoryId = categoryId.CategoryId;
                    // update.UpdatedDate = DateTime.Now;
                     _adminDbContext.Update(update);
                     _adminDbContext.SaveChanges();
 
                     SubCategoryDTOReq subCategoryDTOReq = new SubCategoryDTOReq();
                     subCategoryDTOReq.Name = update.SubCategoryName;
-                    subCategoryDTOReq.Parent_Category__c = update.CategoryId.ToString();
+                    subCategoryDTOReq.Parent_Category__c = categoryId.SalesForceId;
                     subCategoryDTOReq.SubCategoryDotNetId__c = update.SubCategoryId.ToString();
                     var response = await _buyerService.EditSubCategory(subCategoryDTOReq, update.SalesForceId);
                     _adminDbContext.SubCategory.Update(update);
