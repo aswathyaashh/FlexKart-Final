@@ -249,34 +249,23 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 if (brand.Status == 0)
                 {
-                    ProductModel product = _adminDbContext.Product.FirstOrDefault(i => i.BrandId == brandId);
-                    if (product == null)
-                    {
-                        brand.Status = 1;
-                        brand.UpdatedDate = DateTime.Now;
-                        _adminDbContext.Brand.Update(brand);
-                        _adminDbContext.SaveChanges();
 
-                        BrandDTOReq brandDTOReq = new BrandDTOReq();
-                        brandDTOReq.Name = brand.BrandName;
-                        brandDTOReq.BrandDotNetId__c = brand.BrandId.ToString();
-                        _buyerService.DeleteBrand(brand.SalesForceId);
-                        _adminDbContext.Brand.Update(brand);
-                        _adminDbContext.SaveChanges();
+                    brand.Status = 1;
+                    brand.UpdatedDate = DateTime.Now;
+                    _adminDbContext.Brand.Update(brand);
+                    _adminDbContext.SaveChanges();
 
-                        response.Success = true;
-                        response.Message = "Brand Deleted";
-                        response.Data = true;
-                        return response;
-                    }
-                    else
-                    {
-                        response.Success = false;
-                        response.Message = "Brand can't be deleted";
-                        response.Data = false;
-                        return response;
-                    }
+                    BrandDTOReq brandDTOReq = new BrandDTOReq();
+                    brandDTOReq.Name = brand.BrandName;
+                    brandDTOReq.BrandDotNetId__c = brand.BrandId.ToString();
+                    _buyerService.DeleteBrand(brand.SalesForceId);
+                    _adminDbContext.Brand.Update(brand);
+                    _adminDbContext.SaveChanges();
 
+                    response.Success = true;
+                    response.Message = "Brand Deleted";
+                    response.Data = true;
+                    return response;
                 }
                 else
                 {
@@ -285,8 +274,8 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     response.Data = false;
                     return response;
                 }
-            }
 
+            }
             response.Success = false;
             response.Message = "ID doesn't exist.";
             return response;
