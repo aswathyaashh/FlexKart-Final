@@ -75,7 +75,7 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Delete Product", Description = "Delete specified Product by id")]
-        public ApiResponse<bool> Delete(int productId)
+        public ApiResponse<bool> DeleteProduct(int productId)
         {
             return _product.Delete(productId);
         }
