@@ -1,65 +1,32 @@
 ﻿using AutoMapper;
-using E_Commerce.core.ApplicationLayer.DTOModel;
+using E_Commerce.core.DomainLayer.Entities;
+using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.ApplicationLayer.DTOModel.Customer;
 using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
-using E_Commerce.core.ApplicationLayer.Interface;
-using E_Commerce.core.DomainLayer.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace E_Commerce.infrastructure.RepositoryLayer.services
 {
     public class Customer : ICustomer
     {
         #region(Private Variables)
+
         private readonly AdminDbContext _adminDbContext;
         private readonly IMapper _mapper;
+
         #endregion
 
         #region(Constructor)
+
         public Customer(AdminDbContext adminDbContext, IMapper mapper)
         {
             _adminDbContext = adminDbContext;
             _mapper = mapper;
         }
 
-        public ApiResponse<bool> Delete(int customerId)
-        {
-
-            //CustomerModel1 customer = _adminDbContext.Customer.FirstOrDefault(i => i.CustomerId == customerId);
-            //ApiResponse<bool> response = new ApiResponse<bool>();
-
-            //if (customer != null)
-            //{
-            //    if (customer.Status == 0)
-            //    {
-            //        customer.Status = 1;
-            //        // subCategory.UpdatedDate = DateTime.Now;
-            //        _adminDbContext.Customer.Update(customer);
-            //        _adminDbContext.SaveChanges();
-            //        response.Success = true;
-            //        response.Message = "Deleted";
-            //        return response;
-
-            //    }
-
-            //    else
-            //    {
-            //        response.Success = false;
-            //        response.Message = "Already Deleted category";
-            //        response.Data = false;
-            //        return response;
-            //    }
-            //}
-            //    response.Success = false;
-            //    response.Message = "Customer doesn't exist.";
-            //    return response; 
-            return null;
-        }
         #endregion
+
+        #region(Customer Details)
         public ApiResponse<List<CustomerListDTO>> Get()
         {
             ApiResponse<List<CustomerListDTO>> response = new ApiResponse<List<CustomerListDTO>>();
@@ -80,7 +47,9 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             }
             return null;
         }
+        #endregion
 
+        #region(Customer Add)
         public ApiResponse<int> Post(CustomerDTO customer)
         {
             var customerModel = new CustomerModel()
@@ -111,7 +80,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             }
             return null;
         }
-
+        #endregion
 
     }
 }

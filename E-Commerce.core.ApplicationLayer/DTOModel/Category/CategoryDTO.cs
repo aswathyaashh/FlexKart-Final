@@ -1,6 +1,4 @@
-﻿using E_Commerce.core.ApplicationLayer.DTOModel.SubCategory;
-
-namespace E_Commerce.core.ApplicationLayer.DTOModel
+﻿namespace E_Commerce.core.ApplicationLayer.DTOModel
 {
     public class CategoryDTO
     {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RVoiwCWNPzkgAgCyb70df2o5MVCFIIHu8QRoFFFZ6ZrmdCbOyK5vh3zTmJUvawFU58Ny3f5I3Jp0RCL7xL78rA==",
+  "dgSpecHash": "S2WoUtRJLNwdP95tIwqq89ZwqGkbWgRByR2JwhFtrcy08Ks+ZNucQ6bk8hJlBFNISBzRO89n5oIBj4GvFg7k3Q==",
   "success": true,
-  "projectFilePath": "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commerce.core.ServiceLayer.csproj",
+  "projectFilePath": "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commence.BuyerServices.BuyerServiceLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asashok\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\asashok\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

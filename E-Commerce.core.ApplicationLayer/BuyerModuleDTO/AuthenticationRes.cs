@@ -1,6 +1,4 @@
-﻿
-
-namespace E_Commerce.core.ApplicationLayer.BuyerModuleDTO
+﻿namespace E_Commerce.core.ApplicationLayer.BuyerModuleDTO
 {
     public class AuthenticationRes
     {

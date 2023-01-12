@@ -1,21 +1,18 @@
-using E_Commerce.api.APILayer.CustomExceptionMiddleware;
-//using E_Commerce.api.APILayer.SalesforceServices;
-//using E_Commerce.api.APILayer.Services;
-using E_Commerce.core.ApplicationLayer.DTOModel.Helpers;
-using E_Commerce.core.ApplicationLayer.Interface;
-using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
-using E_Commerce.infrastructure.RepositoryLayer;
-using E_Commerce.infrastructure.RepositoryLayer.services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.FileProviders;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
-using ServiceLayer;
-using Swashbuckle.AspNetCore.Filters;
-using System.Reflection;
 using System.Text;
-
+using ServiceLayer;
+using System.Reflection;
+using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.Filters;
+using Microsoft.Extensions.FileProviders;
+using E_Commerce.infrastructure.RepositoryLayer;
+using E_Commerce.core.ApplicationLayer.Interface;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using E_Commerce.core.ApplicationLayer.DTOModel.Helpers;
+using E_Commerce.api.APILayer.CustomExceptionMiddleware;
+using E_Commerce.infrastructure.RepositoryLayer.services;
+using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
 
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -38,7 +35,6 @@ builder.Services.AddSwaggerGen(C =>
     C.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
 
     {
-
         Description = "Standard Authorization header using the Bearer scheme (\"bearer {token}\")",
 
         In = ParameterLocation.Header,
@@ -46,7 +42,6 @@ builder.Services.AddSwaggerGen(C =>
         Name = "Authorization",
 
         Type = SecuritySchemeType.ApiKey
-
     });
 
     C.ExampleFilters();
@@ -58,7 +53,6 @@ builder.Services.AddSwaggerGen(C =>
 });
 
 builder.Services.AddSwaggerExamplesFromAssemblies(Assembly.GetEntryAssembly());
-
 builder.Services.AddAutoMapper(typeof(GeneralProfile).Assembly);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
@@ -83,21 +77,10 @@ builder.Services.AddScoped<IProduct, Product>();
 builder.Services.AddScoped<IOrder, Order>();
 builder.Services.AddScoped<ICustomer, Customer>();
 builder.Services.AddScoped<IBuyerService, BuyerService>();
-
-//builder.Services.AddScoped<IWebC>
-//builder.Services.AddScoped<IImage, Image>();
-//builder.Services.AddScoped<IProductAndImage, Com>();
-
-
-
-
-
 builder.Services.AddCors(p => p.AddPolicy(MyAllowSpecificOrigins, builder =>
 {
     builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
-
-
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())

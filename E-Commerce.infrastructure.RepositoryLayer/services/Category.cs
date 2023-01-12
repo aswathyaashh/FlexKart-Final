@@ -3,9 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using E_Commerce.core.DomainLayer.Entities;
 using E_Commerce.core.ApplicationLayer.DTOModel;
 using E_Commerce.core.ApplicationLayer.Interface;
-using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 using E_Commerce.core.ApplicationLayer.BuyerModuleDTO;
 using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
+using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
+
 
 namespace E_Commerce.infrastructure.RepositoryLayer.services
 {
@@ -55,14 +56,14 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         }
         #endregion
 
-        #region(get CategoryName By Name)
+        #region(get Category By Name)
         /// <summary>  
         ///  Get Category by name  
         /// </summary>  
         /// <param Display category exist if it is category existing otherwise Category doesnt exists </param> 
         public ApiResponse<bool> GetByCategoryName(string name)
         {
-            var entity = _adminDbContext.Category.FirstOrDefault(e => e.CategoryName == name);
+            var entity = _adminDbContext.Category.FirstOrDefault(e => e.CategoryName == name && e.Status == 0);
             ApiResponse<bool> response = new ApiResponse<bool>();
 
             if (entity != null)
@@ -93,7 +94,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         }
         #endregion
 
-        #region(post)
+        #region(Category Add)
         /// <summary>  
         ///  Add Category by id  
         /// </summary>  
@@ -104,11 +105,8 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 CategoryName = categoryDTO.CategoryName
             };
-
-           // categoryModel.UpdatedDate = null;
             _adminDbContext.Category.Add(categoryModel);
             _adminDbContext.SaveChanges();
-
             CategoryDTOReq categoryDTOReq = new CategoryDTOReq();
             categoryDTOReq.Name = categoryModel.CategoryName;
             categoryDTOReq.CategoryDotNetId__c = categoryModel.CategoryId.ToString();
@@ -116,7 +114,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             categoryModel.SalesForceId = response.id;
             _adminDbContext.Category.Update(categoryModel);
             _adminDbContext.SaveChanges();
-
             var add = _adminDbContext.Category.FirstOrDefault(e => e.CategoryName == categoryModel.CategoryName);
             ApiResponse<bool> addResponse = new ApiResponse<bool>();
 
@@ -139,7 +136,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         }
         #endregion
 
-        #region(Delete Category)
+        #region(Category Delete)
         /// <summary>  
         ///  Delete Category by id 
         /// </summary>  
@@ -153,25 +150,20 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 if (category.Status == 0)
                 {
-
                     category.Status = 1;
                     category.UpdatedDate = DateTime.Now;
                     _adminDbContext.Category.Update(category);
                     _adminDbContext.SaveChanges();
-
                     CategoryDTOReq categoryDTOReq = new CategoryDTOReq();
                     categoryDTOReq.Name = category.CategoryName;
                     categoryDTOReq.CategoryDotNetId__c = category.CategoryId.ToString();
                     _buyerService.DeleteCategory(category.SalesForceId);
                     _adminDbContext.Category.Update(category);
                     _adminDbContext.SaveChanges();
-
                     response.Success = true;
                     response.Message = "Category Deleted";
                     response.Data = true;
                     return response;
-
-
                 }
                 else
                 {
@@ -181,7 +173,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     return response;
                 }
             }
-
             response.Success = false;
             response.Message = "ID doesn't exist.";
             return response;
@@ -189,7 +180,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
         #endregion
 
-        #region(Put)
+        #region(Category Edit)
         /// <summary>  
         ///  Edit Category by id  
         /// </summary>  
@@ -212,10 +203,8 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 updateResponse.Message = "Category is updated";
                 updateResponse.Data = true;
                 update.CategoryName = categoryDTO.CategoryName;
-               // update.UpdatedDate = DateTime.Now;
                 _adminDbContext.Update(update);
                 _adminDbContext.SaveChanges();
-
                 CategoryDTOReq categoryDTOReq = new CategoryDTOReq();
                 categoryDTOReq.Name = update.CategoryName;
                 categoryDTOReq.CategoryDotNetId__c = update.CategoryId.ToString();
@@ -224,7 +213,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 _adminDbContext.SaveChanges();
                 return updateResponse;
             }
-
         }
         #endregion
     }

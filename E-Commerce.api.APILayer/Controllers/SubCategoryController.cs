@@ -1,10 +1,10 @@
-﻿using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
-using E_Commerce.core.ApplicationLayer.DTOModel.SubCategory;
-using E_Commerce.core.ApplicationLayer.Interface;
+﻿using System.Net.Mime;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Swashbuckle.AspNetCore.Annotations;
-using Microsoft.AspNetCore.Mvc;
-using System.Net.Mime;
+using E_Commerce.core.ApplicationLayer.Interface;
+using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
+using E_Commerce.core.ApplicationLayer.DTOModel.SubCategory;
 
 namespace E_Commerce.api.APILayer.Controllers
 {
@@ -22,7 +22,7 @@ namespace E_Commerce.api.APILayer.Controllers
             _subCategory = subCategory;
         }
 
-        #region(Get)
+        #region(GetSubCategory)
         /// <summary>  
         /// API to Get all data  
         /// </summary>  
@@ -33,13 +33,13 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<List<SubCategoryDTO>>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Get all List", Description = "Get SubCategory List")]
-        public ApiResponse<List<SubCategoryDTO>> Get()
+        public ApiResponse<List<SubCategoryDTO>> GetSubCategory()
         {
             return _subCategory.Get();
         }
         #endregion
 
-        #region(Delete SubCategory)
+        #region(DeleteSubCategory)
         /// <summary>  
         ///  API for Delete SubCategory   
         /// </summary>  
@@ -50,13 +50,13 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Delete SubCategory", Description = "Delete specified SubCategory by id")]
-        public ApiResponse<bool> Delete(int subCategoryId)
+        public ApiResponse<bool> DeleteSubCategory(int subCategoryId)
         {
             return _subCategory.Delete(subCategoryId);
         }
         #endregion
 
-        #region(Post)
+        #region(AddSubCategory)
         /// <summary>  
         ///  API for Adding SubCategory   
         /// </summary>  
@@ -73,7 +73,7 @@ namespace E_Commerce.api.APILayer.Controllers
         }
         #endregion
 
-        #region(get SubCategoryName By Name)
+        #region(GetSubCategory By Name)
         /// <summary>  
         ///  Get SubCategory by name  
         /// </summary>  
@@ -84,13 +84,13 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Gets SubCategory By Name", Description = "Checks if subcategory exists")]
-        public ApiResponse<bool> GetSubCategoryByName(string subcategoryName,int id)
+        public ApiResponse<bool> GetSubCategoryByName(string subcategoryName,int categoryId)
         {
-            return _subCategory.GetBySubCategoryName(subcategoryName, id);
+            return _subCategory.GetBySubCategoryName(subcategoryName, categoryId);
         }
         #endregion
 
-        #region(Put)
+        #region(EditSubCategory)
         /// <summary>  
         /// API for Editing SubCategory   
         /// </summary>  
@@ -106,7 +106,6 @@ namespace E_Commerce.api.APILayer.Controllers
             return _subCategory.Update(id, subCategory);
         }
         #endregion
-
 
     }
 }

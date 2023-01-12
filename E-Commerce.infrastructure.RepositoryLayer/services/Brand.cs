@@ -4,11 +4,9 @@ using Microsoft.AspNetCore.Hosting;
 using E_Commerce.core.DomainLayer.Entities;
 using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.ApplicationLayer.DTOModel.Brand;
-using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
-using Org.BouncyCastle.Asn1.Ocsp;
-using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
 using E_Commerce.core.ApplicationLayer.BuyerModuleDTO;
-using Microsoft.AspNetCore.Mvc;
+using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
+using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 
 namespace E_Commerce.infrastructure.RepositoryLayer.services
 {
@@ -19,7 +17,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _hostEnvironment;
         private readonly IBuyerService _buyerService;
-       
+
         #endregion
 
         #region(Constructor)
@@ -34,7 +32,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
         #region(Get Brand)
         /// <summary>  
-        /// Gets all data  
+        /// Gets all Brand data  
         /// </summary>  
         /// <returns>collection of brands.</returns>  
         public ApiResponse<List<BrandDTO>> Get(String Scheme, HostString Host, PathString PathBase)
@@ -52,7 +50,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
             if (value != null && value.Count > 0)
             {
-                response.Message = "Brand Listed";
+                response.Message = "Brands Listed";
                 response.Success = true;
                 response.Data = value;
                 return response;
@@ -67,7 +65,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         }
         #endregion
 
-        #region(Post)
+        #region(Add Brand)
         /// <summary>  
         ///  Create brand  
         /// </summary>  
@@ -83,8 +81,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 brand.CreatedDate = DateTime.Now;
                 _adminDbContext.Brand.Add(brand);
                 _adminDbContext.SaveChanges();
-
-
                 BrandDTOReq brandDTOReq = new BrandDTOReq();
                 brandDTOReq.Name = brand.BrandName;
                 brandDTOReq.BrandDotNetId__c = brand.BrandId.ToString();
@@ -92,8 +88,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 brand.SalesForceId = response.id;
                 _adminDbContext.Brand.Update(brand);
                 _adminDbContext.SaveChanges();
-
-
                 addResponse.Success = true;
                 addResponse.Message = "New Brand created";
                 addResponse.Data = true;
@@ -106,12 +100,8 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 addResponse.Data = false;
                 return addResponse;
             }
-
-            
         }
         #endregion
-
-         
 
         #region(Function for Uploading logo)
         /// <summary>  
@@ -120,11 +110,9 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         /// <param Upload a brand logo with current datetime in logopath</param>
         public async Task<string> SaveLogo(IFormFile logo)
         {
-
             string logoPath = new String(Path.GetFileNameWithoutExtension(logo.FileName).Take(10).ToArray()).Replace(' ', '-');
             logoPath = logoPath + DateTime.Now.ToString("yyyyMMddhhmmfff") + Path.GetExtension(logo.FileName);
             var path = Path.Combine(_hostEnvironment.ContentRootPath, "Images", logoPath);
-
             using (var filestream = new FileStream(path, FileMode.Create))
             {
                 await logo.CopyToAsync(filestream);
@@ -140,7 +128,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         /// <param Display brand exist if it is in database otherwise doesnt exist</param>
         public ApiResponse<bool> GetByBrandName(string name)
         {
-            var brandName = _adminDbContext.Brand.FirstOrDefault(e => e.BrandName == name);
+            var brandName = _adminDbContext.Brand.FirstOrDefault(e => e.BrandName == name && e.Status == 0);
             ApiResponse<bool> response = new ApiResponse<bool>();
             if (brandName != null)
             {
@@ -167,49 +155,45 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 return response;
 
             }
-
         }
         #endregion
 
-        #region(Update)
+        #region(Update Brand)
         /// <summary>  
         ///  Update brand  
         /// </summary>  
         /// <param Edit brand name and logo path</param>
-        public async Task<ApiResponse<bool>> Update(BrandDTO BrandId)
+        public async Task<ApiResponse<bool>> Update(BrandDTO brandId)
         {
-            var updateData = _adminDbContext.Brand.FirstOrDefault(i => i.BrandId == BrandId.BrandId);
+            var updateData = _adminDbContext.Brand.FirstOrDefault(i => i.BrandId == brandId.BrandId);
             ApiResponse<bool> updateResponse = new ApiResponse<bool>();
             if (updateData != null)
             {
                 if (updateData.Status == 0)
                 {
-
-                    if (BrandId.BrandName == null)
+                    if (brandId.BrandName == null)
                     {
                         updateData.BrandName = updateData.BrandName;
                     }
                     else
                     {
-                        updateData.BrandName = BrandId.BrandName;
+                        updateData.BrandName = brandId.BrandName;
 
                     }
-                    if (BrandId.Logo == null)
+                    if (brandId.Logo == null)
                     {
                         updateData.LogoPath = updateData.LogoPath;
                     }
                     else
                     {
-                        updateData.LogoPath = await SaveLogo(BrandId.Logo);
-
+                        updateData.LogoPath = await SaveLogo(brandId.Logo);
                     }
                     updateResponse.Success = true;
                     updateResponse.Message = " Brand updated";
                     updateResponse.Data = true;
-                     updateData.UpdatedDate = DateTime.Now;                    
+                    updateData.UpdatedDate = DateTime.Now;
                     _adminDbContext.Brand.Update(updateData);
                     _adminDbContext.SaveChanges();
-
                     BrandDTOReq brandDTOReq = new BrandDTOReq();
                     brandDTOReq.Name = updateData.BrandName;
                     brandDTOReq.BrandDotNetId__c = updateData.BrandId.ToString();
@@ -249,19 +233,16 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 if (brand.Status == 0)
                 {
-
                     brand.Status = 1;
                     brand.UpdatedDate = DateTime.Now;
                     _adminDbContext.Brand.Update(brand);
                     _adminDbContext.SaveChanges();
-
                     BrandDTOReq brandDTOReq = new BrandDTOReq();
                     brandDTOReq.Name = brand.BrandName;
                     brandDTOReq.BrandDotNetId__c = brand.BrandId.ToString();
                     _buyerService.DeleteBrand(brand.SalesForceId);
                     _adminDbContext.Brand.Update(brand);
                     _adminDbContext.SaveChanges();
-
                     response.Success = true;
                     response.Message = "Brand Deleted";
                     response.Data = true;
@@ -274,14 +255,13 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     response.Data = false;
                     return response;
                 }
-
             }
             response.Success = false;
             response.Message = "ID doesn't exist.";
             return response;
         }
-            #endregion
+        #endregion
 
-        }
     }
+}
 

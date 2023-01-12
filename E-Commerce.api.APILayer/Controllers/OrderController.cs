@@ -1,13 +1,10 @@
-﻿using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
-using E_Commerce.core.ApplicationLayer.DTOModel.Order;
-using E_Commerce.core.ApplicationLayer.DTOModel.SubCategory;
-using E_Commerce.core.ApplicationLayer.Interface;
-using E_Commerce.infrastructure.RepositoryLayer.services;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Swashbuckle.AspNetCore.Annotations;
-using System.Net.Mime;
+using E_Commerce.core.ApplicationLayer.Interface;
+using E_Commerce.core.ApplicationLayer.DTOModel.Order;
+using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 
 namespace E_Commerce.api.APILayer.Controllers
 {
@@ -25,29 +22,28 @@ namespace E_Commerce.api.APILayer.Controllers
             _order = order;
         }
 
-        #region(Get)
+        #region(GetOrder)
         /// <summary>  
-                    /// API to Get all data  
-                    /// </summary>  
-                    /// <returns>API for calling function to list orders with their id</returns>  
+        /// API to Get all data  
+        /// </summary>  
+        /// <returns>API for calling function to list orders with their id</returns>  
         [HttpGet]
         [Route("get")]
         [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<List<OrderDTO>>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Get all List", Description = "Get order List")]
-        public ApiResponse<List<OrderListDTO>> Get()
+        public ApiResponse<List<OrderListDTO>> GetOrder()
         {
             return _order.Get();
         }
         #endregion
 
-
-        #region(Post)
+        #region(AddOrder)
         /// <summary>  
-                    ///  API for Adding SubCategory   
-                    /// </summary>  
-                    /// <param API to add subcategory name in database</param> 
+        ///  API for Adding Order   
+        /// </summary>  
+        /// <param API to add order name in database</param> 
         [HttpPost]
         [Route("AddOrder")]
         [AllowAnonymous]
@@ -59,9 +55,6 @@ namespace E_Commerce.api.APILayer.Controllers
             return _order.Post(Order);
         }
         #endregion
-
-
-
     }
 }
 

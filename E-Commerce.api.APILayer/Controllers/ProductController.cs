@@ -1,15 +1,12 @@
-﻿using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
-using E_Commerce.core.ApplicationLayer.DTOModel.Image;
+﻿using ServiceStack;
+using System.Net.Mime;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Swashbuckle.AspNetCore.Annotations;
+using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.ApplicationLayer.DTOModel.Product;
 using E_Commerce.core.ApplicationLayer.DTOModel.SubCategory;
-using E_Commerce.core.ApplicationLayer.Interface;
-using E_Commerce.infrastructure.RepositoryLayer.services;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using ServiceStack;
-using Swashbuckle.AspNetCore.Annotations;
-using System.Net.Mime;
+using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 
 namespace E_Commerce.api.APILayer.Controllers
 {
@@ -27,7 +24,7 @@ namespace E_Commerce.api.APILayer.Controllers
             _product = product;
         }
 
-        #region(Get)
+        #region(GetProduct)
         /// <summary>  
         /// API to Get all data  
         /// </summary>  
@@ -38,13 +35,13 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<List<ProductListDTO>>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Get all List", Description = "Get Product List")]
-        public ApiResponse<List<ProductListDTO>> Get()
+        public ApiResponse<List<ProductListDTO>> GetProduct()
         {
             return _product.Get();
         }
         #endregion
 
-        #region(Post)
+        #region(AddProduct)
         /// <summary>  
         ///  API for Adding Product  
         /// </summary>  
@@ -64,7 +61,7 @@ namespace E_Commerce.api.APILayer.Controllers
         }
         #endregion
 
-        #region(Delete Product)
+        #region(DeleteProduct)
         /// <summary>  
         ///  API for Delete Product   
         /// </summary>  
@@ -81,7 +78,7 @@ namespace E_Commerce.api.APILayer.Controllers
         }
         #endregion
 
-        #region(get Product By Name)
+        #region(GetProduct By Name)
         /// <summary>  
         ///  Get Product by name  
         /// </summary>  
@@ -97,7 +94,7 @@ namespace E_Commerce.api.APILayer.Controllers
         }
         #endregion
 
-        #region(get Product By Id)
+        #region(GetProduct By Id)
         /// <summary>  
         ///  Get Product by id  
         /// </summary>  
@@ -114,7 +111,7 @@ namespace E_Commerce.api.APILayer.Controllers
         }
         #endregion
 
-        #region(Put)
+        #region(EditProduct)
         /// <summary>  
         /// API for Editing Product   
         /// </summary>  
@@ -134,7 +131,7 @@ namespace E_Commerce.api.APILayer.Controllers
         }
         #endregion
 
-        #region(get SubcategoryList By Category )
+        #region(GetSubcategoryList By Category )
         /// <summary>  
         ///  Get Subcategory by category id 
         /// </summary>  
@@ -150,7 +147,6 @@ namespace E_Commerce.api.APILayer.Controllers
             return _product.GetSubcategory(id);
         }
         #endregion
-
 
     }
 }

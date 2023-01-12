@@ -1,51 +1,40 @@
 ﻿using AutoMapper;
-using Azure;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using E_Commerce.core.DomainLayer.Entities;
+using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.ApplicationLayer.BuyerModuleDTO;
-using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 using E_Commerce.core.ApplicationLayer.DTOModel.Image;
 using E_Commerce.core.ApplicationLayer.DTOModel.Product;
 using E_Commerce.core.ApplicationLayer.DTOModel.SubCategory;
-using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.ApplicationLayer.Interface.Salesforce;
-using E_Commerce.core.DomainLayer.Entities;
-using ECommerce.infrastructure.RepositoryLayer.Migrations;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using NPOI.SS.Formula.Functions;
-using System;
-using System.Collections.Generic;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
+using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
+
+
 
 namespace E_Commerce.infrastructure.RepositoryLayer.services
 {
     public class Product : IProduct
     {
         #region(Private Variables)
-        private readonly AdminDbContext _adminDbContext;
+
         private readonly IMapper _mapper;
-        private readonly IHostEnvironment _hostEnvironment;
         private readonly IBuyerService _buyerService;
+        private readonly AdminDbContext _adminDbContext;
+        private readonly IHostEnvironment _hostEnvironment;
 
         #endregion
-
 
         #region(Constructor)
         public Product(AdminDbContext adminDbContext, IMapper mapper, IHostEnvironment hostEnvironment, IBuyerService buyerService)
         {
-            _adminDbContext = adminDbContext;
             _mapper = mapper;
-            _hostEnvironment = hostEnvironment;
             _buyerService = buyerService;
+            _adminDbContext = adminDbContext;
+            _hostEnvironment = hostEnvironment;
         }
         #endregion
-
 
         #region(Delete Product)
         /// <summary>  
@@ -64,7 +53,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     product.Status = 1;
                     _adminDbContext.Product.Update(product);
                     _adminDbContext.SaveChanges();
-
                     ProductDTOReq productDTOReq = new ProductDTOReq();
                     productDTOReq.Name = product.ProductName;
                     productDTOReq.productDotNetId__c = product.ProductId.ToString();
@@ -92,8 +80,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         }
         #endregion
 
-
-        #region(Product View)
+        #region(Product View with Corresponding Images)
         /// <summary>  
         /// Gets ProductBy Id  
         /// </summary>  
@@ -108,10 +95,10 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 foreach (var content in data)
                 {
                     ProductViewDTO productDTO = new ProductViewDTO();
-                    productDTO = _mapper.Map<ProductModel, ProductViewDTO>(content);                  
-                    productDTO.SubCategoryName= content.SubCategoryModel.SubCategoryName;                  
+                    productDTO = _mapper.Map<ProductModel, ProductViewDTO>(content);
+                    productDTO.SubCategoryName = content.SubCategoryModel.SubCategoryName;
                     productDTO.CategoryName = content.SubCategoryModel.CategoryModel.CategoryName;
-                    productDTO.BrandName = content.BrandModel.BrandName;       
+                    productDTO.BrandName = content.BrandModel.BrandName;
                     productDTO.Image = _mapper.Map<List<ImageModel>, List<ImageDTO>>(_adminDbContext.Image.Where(i => i.ProductId == content.ProductId && i.Status == 0).ToList());
                     ImageDTO imageDTO = new ImageDTO();
 
@@ -124,7 +111,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
                 }
 
-                response.Message = "Listed";
+                response.Message = "Product Listed";
                 response.Success = true;
                 response.Data = list;
                 return response;
@@ -138,7 +125,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         }
         #endregion
 
-        #region(getsubcategorylist)
+        #region(Get SubCategory List)
         public ApiResponse<List<SubCategoryDTO>> GetSubcategory(int categoryId)
         {
             ApiResponse<List<SubCategoryDTO>> response = new ApiResponse<List<SubCategoryDTO>>();
@@ -158,7 +145,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                         response.Success = true;
                         response.Data = getSubcategory;
                         return response;
-
                     }
                     else
                     {
@@ -179,9 +165,9 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
         #region(Get ProductList)
         /// <summary>  
-        /// Gets all data  
+        /// Gets product details 
         /// </summary>  
-        /// <returns>collection of products.</returns> 
+        /// <returns>Collection of products with their data.</returns> 
         public ApiResponse<List<ProductListDTO>> Get()
         {
             ApiResponse<List<ProductListDTO>> response = new ApiResponse<List<ProductListDTO>>();
@@ -204,7 +190,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     productListDTO.CategoryName = content.SubCategoryModel.CategoryModel.CategoryName;
                     productListDTO.BrandId = content.BrandId;
                     productListDTO.BrandName = content.BrandModel.BrandName;
-
                     list.Add(productListDTO);
                 }
                 response.Message = "Product Listed";
@@ -221,8 +206,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         }
         #endregion
 
-
-        #region(get ProductName By Name)
+        #region(ProductName By Name)
         /// <summary>  
         ///  Get Product by name  
         /// </summary>  
@@ -259,13 +243,15 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         }
         #endregion
 
-        #region(POST)
+        #region(AddProduct)
+        /// <summary>  
+        ///  Add Product details 
+        /// </summary>  
+        /// <param Add Product details  into database</param> 
         public async Task<ApiResponse<bool>> Post(ProductDTO product, String Scheme, HostString Host, PathString PathBase)
         {
             ApiResponse<bool> Response = new ApiResponse<bool>();
-
             ProductModel productModel = new ProductModel();
-
             productModel = _mapper.Map<ProductDTO, ProductModel>(product);
 
             if (productModel != null)
@@ -277,7 +263,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 for (var i = 1; i <= product.productImage.Count; i++)
                 {
                     ImageModel imageModel = new ImageModel();
-
                     imageModel.ProductId = productModel.ProductId;
                     imageModel.ImageName = "Image" + i;
                     imageModel.Priority = i;
@@ -286,45 +271,44 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     _adminDbContext.Image.Add(imageModel);
                     _adminDbContext.SaveChanges();
                 }
-                    ProductDTOReq productDTOReq = new ProductDTOReq();
-                    var brandIdData = _adminDbContext.Brand.Where(i => i.BrandId == productModel.BrandId).FirstOrDefault();
-                    var subCategoryIdData = _adminDbContext.SubCategory.Where(i => i.SubCategoryId == productModel.SubCategoryId).FirstOrDefault();
-                    var imageData = _adminDbContext.Image.Where(i => i.ProductId == productModel.ProductId).ToList();
-                    productDTOReq.Name = productModel.ProductName;
-                    productDTOReq.productDotNetId__c = productModel.ProductId.ToString();
-                    productDTOReq.Brand_FK__c = brandIdData.SalesForceId;
-                    productDTOReq.Sub_Category__c = subCategoryIdData.SalesForceId;
-                    productDTOReq.Price__c = productModel.Price.ToString();
-                    productDTOReq.Quantity__c = productModel.Quantity.ToString();
-                    productDTOReq.Specifications__c = productModel.Description;
-                    productDTOReq.ImageUrl1__c = String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[0].ImagePath);
-                    productDTOReq.ImageUrl2__c = String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[1].ImagePath);
-                    for(int i = 2; i < imageData.Count; i++)
-                    {
-                        productDTOReq.ImageUrl2__c = productDTOReq.ImageUrl2__c+","+ String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[i].ImagePath) ;
-                    }           
-                    var response = await _buyerService.AddProduct(productDTOReq);
-                    productModel.SalesForceId = response.id;
-                    _adminDbContext.Product.Update(productModel);
-                    _adminDbContext.SaveChanges();
+                ProductDTOReq productDTOReq = new ProductDTOReq();
+                var brandIdData = _adminDbContext.Brand.Where(i => i.BrandId == productModel.BrandId).FirstOrDefault();
+                var subCategoryIdData = _adminDbContext.SubCategory.Where(i => i.SubCategoryId == productModel.SubCategoryId).FirstOrDefault();
+                var imageData = _adminDbContext.Image.Where(i => i.ProductId == productModel.ProductId).ToList();
+                productDTOReq.Name = productModel.ProductName;
+                productDTOReq.productDotNetId__c = productModel.ProductId.ToString();
+                productDTOReq.Brand_FK__c = brandIdData.SalesForceId;
+                productDTOReq.Sub_Category__c = subCategoryIdData.SalesForceId;
+                productDTOReq.Price__c = productModel.Price.ToString();
+                productDTOReq.Quantity__c = productModel.Quantity.ToString();
+                productDTOReq.Specifications__c = productModel.Description;
+                productDTOReq.ImageUrl1__c = String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[0].ImagePath);
+                productDTOReq.ImageUrl2__c = String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[1].ImagePath);
 
-                
+                for (int i = 2; i < imageData.Count; i++)
+                {
+                    productDTOReq.ImageUrl2__c = productDTOReq.ImageUrl2__c + "," + String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[i].ImagePath);
+                }
+
+                var response = await _buyerService.AddProduct(productDTOReq);
+                productModel.SalesForceId = response.id;
+                _adminDbContext.Product.Update(productModel);
+                _adminDbContext.SaveChanges();
                 Response.Success = true;
-                Response.Message = " Added";
+                Response.Message = "Product Added";
                 Response.Data = true;
                 return Response;
             }
             else
             {
                 Response.Success = false;
-                Response.Message = "Not Added";
+                Response.Message = "No Product Added";
                 Response.Data = false;
                 return Response;
             }
 
         }
         #endregion
-
 
         #region(Function for Uploading image)
         /// <summary>  
@@ -346,14 +330,12 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
         #endregion
 
-
         #region(Put)
         /// <summary>  
         ///  Edit Product by id  
         /// </summary>  
         /// <param edit product name in database</param> 
         public async Task<ApiResponse<bool>> Update(int id, ProductDTO productDTO, String Scheme, HostString Host, PathString PathBase)
-
         {
             var update = _adminDbContext.Product.FirstOrDefault(e => e.ProductId == id);
             ApiResponse<bool> updateResponse = new ApiResponse<bool>();
@@ -373,7 +355,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 update.Description = productDTO.Description;
                 update.BrandId = productDTO.BrandId;
                 update.SubCategoryId = productDTO.SubCategoryId;
-                //update.SalesForceId = productDTO.SalesForceId;
                 update.UpdatedDate = DateTime.UtcNow;
                 _adminDbContext.Product.Update(update);
                 _adminDbContext.SaveChanges();
@@ -397,29 +378,26 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                         _adminDbContext.SaveChanges();
                     }
 
-                        ProductDTOReq productDTOReq = new ProductDTOReq();
-                        var brandData = _adminDbContext.Brand.Where(i => i.BrandId == update.BrandId).FirstOrDefault();
-                        var subCategoryData = _adminDbContext.SubCategory.Where(i => i.SubCategoryId == update.SubCategoryId).FirstOrDefault();
-                        var imageData = _adminDbContext.Image.Where(i => i.ProductId == update.ProductId).ToList();
-                        productDTOReq.Name = update.ProductName;
-                        productDTOReq.productDotNetId__c = update.ProductId.ToString();
-                        productDTOReq.Brand_FK__c = brandData.SalesForceId;
-                        productDTOReq.Sub_Category__c = subCategoryData.SalesForceId;
-                        productDTOReq.Price__c = update.Price.ToString();
-                        productDTOReq.Quantity__c = update.Quantity.ToString();
-                        productDTOReq.Specifications__c = update.Description;
-                        productDTOReq.ImageUrl1__c = String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[0].ImagePath);
-                        productDTOReq.ImageUrl2__c = String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[1].ImagePath);
-                        for (int i = 2; i < imageData.Count; i++)
-                        {
-                            productDTOReq.ImageUrl2__c = productDTOReq.ImageUrl2__c + "," + String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[i].ImagePath);
-                        }
-                        var response = await _buyerService.EditProduct(productDTOReq, update.SalesForceId);
-                        _adminDbContext.Product.Update(update);
-                        _adminDbContext.SaveChanges();
-                        
-
-                    
+                    ProductDTOReq productDTOReq = new ProductDTOReq();
+                    var brandData = _adminDbContext.Brand.Where(i => i.BrandId == update.BrandId).FirstOrDefault();
+                    var subCategoryData = _adminDbContext.SubCategory.Where(i => i.SubCategoryId == update.SubCategoryId).FirstOrDefault();
+                    var imageData = _adminDbContext.Image.Where(i => i.ProductId == update.ProductId).ToList();
+                    productDTOReq.Name = update.ProductName;
+                    productDTOReq.productDotNetId__c = update.ProductId.ToString();
+                    productDTOReq.Brand_FK__c = brandData.SalesForceId;
+                    productDTOReq.Sub_Category__c = subCategoryData.SalesForceId;
+                    productDTOReq.Price__c = update.Price.ToString();
+                    productDTOReq.Quantity__c = update.Quantity.ToString();
+                    productDTOReq.Specifications__c = update.Description;
+                    productDTOReq.ImageUrl1__c = String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[0].ImagePath);
+                    productDTOReq.ImageUrl2__c = String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[1].ImagePath);
+                    for (int i = 2; i < imageData.Count; i++)
+                    {
+                        productDTOReq.ImageUrl2__c = productDTOReq.ImageUrl2__c + "," + String.Format("{0}://{1}{2}/Images/{3}", Scheme, Host, PathBase, imageData[i].ImagePath);
+                    }
+                    var response = await _buyerService.EditProduct(productDTOReq, update.SalesForceId);
+                    _adminDbContext.Product.Update(update);
+                    _adminDbContext.SaveChanges();
                 }
                 return updateResponse;
             }

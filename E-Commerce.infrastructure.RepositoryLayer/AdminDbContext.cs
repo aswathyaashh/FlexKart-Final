@@ -1,5 +1,6 @@
-﻿using E_Commerce.core.DomainLayer.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using E_Commerce.core.DomainLayer.Entities;
+
 
 namespace E_Commerce.infrastructure.RepositoryLayer
 {
@@ -17,7 +18,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer
         public DbSet<OrderModel> Order { get; set; }
         public DbSet<CustomerModel> Customer { get; set; }
         public DbSet<ImageModel> Image { get; set; }
-
 
     }
 }

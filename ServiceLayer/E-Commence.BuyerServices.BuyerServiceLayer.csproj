@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\E-Commerce.core.ApplicationLayer\E-Commerce.core.ApplicationLayer.csproj" />
+    <ProjectReference Include="..\E-Commerce.infrastructure.RepositoryLayer\E-Commerce.infrastructure.RepositoryLayer.csproj" />
+  </ItemGroup>
+
+</Project>

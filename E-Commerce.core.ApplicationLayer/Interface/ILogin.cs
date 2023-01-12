@@ -4,7 +4,7 @@ namespace E_Commerce.core.ApplicationLayer.Interface
 {
     public interface ILogin
     {
-       public LoginResponseDTO LoginCheck(LoginDTO login);
+        public LoginResponseDTO LoginCheck(LoginDTO login);
     }
 }
 

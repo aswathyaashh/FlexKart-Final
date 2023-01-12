@@ -9,7 +9,6 @@ namespace E_Commerce.core.ApplicationLayer.DTOModel.Brand
         public string LogoPath { get; set; }
         public IFormFile Logo { get; set; }
         public string ImageSrc { get; set; }
-        
 
     }
 }

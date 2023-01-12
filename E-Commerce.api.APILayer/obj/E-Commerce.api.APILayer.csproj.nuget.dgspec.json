@@ -31,8 +31,8 @@
               "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.infrastructure.RepositoryLayer.csproj": {
                 "projectPath": "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.infrastructure.RepositoryLayer.csproj"
               },
-              "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commerce.core.ServiceLayer.csproj": {
-                "projectPath": "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commerce.core.ServiceLayer.csproj"
+              "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commence.BuyerServices.BuyerServiceLayer.csproj": {
+                "projectPath": "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commence.BuyerServices.BuyerServiceLayer.csproj"
               }
             }
           }
@@ -478,12 +478,12 @@
         }
       }
     },
-    "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commerce.core.ServiceLayer.csproj": {
+    "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commence.BuyerServices.BuyerServiceLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commerce.core.ServiceLayer.csproj",
-        "projectName": "E-Commerce.core.ServiceLayer",
-        "projectPath": "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commerce.core.ServiceLayer.csproj",
+        "projectUniqueName": "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commence.BuyerServices.BuyerServiceLayer.csproj",
+        "projectName": "E-Commence.BuyerServices.BuyerServiceLayer",
+        "projectPath": "D:\\TeamProject\\CopyNew\\ServiceLayer\\E-Commence.BuyerServices.BuyerServiceLayer.csproj",
         "packagesPath": "C:\\Users\\asashok\\.nuget\\packages\\",
         "outputPath": "D:\\TeamProject\\CopyNew\\ServiceLayer\\obj\\",
         "projectStyle": "PackageReference",

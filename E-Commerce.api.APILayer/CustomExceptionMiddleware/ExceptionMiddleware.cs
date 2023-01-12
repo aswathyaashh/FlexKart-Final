@@ -1,19 +1,14 @@
-﻿using Amazon.CodePipeline.Model;
-using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
-using Microsoft.AspNetCore.Diagnostics;
+﻿using System.Net;
 using Newtonsoft.Json;
-using System.Net;
+using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 
 namespace E_Commerce.api.APILayer.CustomExceptionMiddleware
 {
     public class ExceptionMiddleware
     {
         private readonly RequestDelegate _next;
-        //private readonly ILoggerManager _logger;
-
         public ExceptionMiddleware(RequestDelegate next)
         {
-            //_logger = logger;
             _next = next;
         }
 
@@ -25,7 +20,6 @@ namespace E_Commerce.api.APILayer.CustomExceptionMiddleware
             }
             catch (Exception ex)
             {
-                //_logger.LogError($"Something went wrong: {ex}");
                 await HandleExceptionAsync(httpContext, ex);
             }
         }

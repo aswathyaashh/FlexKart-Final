@@ -1,20 +1,17 @@
-﻿using System.Net.Mime;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Swashbuckle.AspNetCore.Annotations;
 using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.ApplicationLayer.DTOModel;
 using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace E_Commerce.api.APILayer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
-    [Consumes("application/json", MediaTypeNames.Application.Xml)]
-    [Produces("application/json", MediaTypeNames.Application.Xml)]
+    [Consumes("application/json")]
+    [Produces("application/json")]
     public class CategoryController : ControllerBase
     {
         private readonly ICategory _category;
@@ -24,7 +21,7 @@ namespace E_Commerce.api.APILayer.Controllers
             _category = category;
         }
 
-        #region(Get)
+        #region(GetCategory)
 
         /// <summary>  
         /// API to Get all data  
@@ -35,14 +32,14 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<List<CategoryDTO>>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Get all List", Description = "Get Category List")]
-        public ApiResponse<List<CategoryDTO>> Get()
+        public ApiResponse<List<CategoryDTO>> GetCategory()
         {
             return _category.Get();
         }
 
         #endregion
 
-        #region(Delete Category)
+        #region(DeleteCategory)
         /// <summary>  
         ///  API for Delete Category   
         /// </summary>  
@@ -53,13 +50,13 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Delete Category", Description = "Delete specified category by id")]
-        public ApiResponse<bool> Delete(int categoryId)
+        public ApiResponse<bool> DeleteCategory(int categoryId)
         {
             return _category.Delete(categoryId);
         }
         #endregion
 
-        #region(get CategoryName By Name)
+        #region(GetCategoryName By Name)
         /// <summary>  
         ///  Get Category by name  
         /// </summary>  
@@ -76,7 +73,7 @@ namespace E_Commerce.api.APILayer.Controllers
         }
         #endregion
 
-        #region(Post)
+        #region(AddCategory)
         /// <summary>  
         ///  API for Adding Category   
         /// </summary>  
@@ -93,7 +90,7 @@ namespace E_Commerce.api.APILayer.Controllers
         }
         #endregion
 
-        #region(Put)
+        #region(EditCategory)
         /// <summary>  
         /// API for Editing Category   
         /// </summary>  

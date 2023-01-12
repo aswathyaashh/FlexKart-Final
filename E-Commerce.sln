@@ -26,9 +26,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{0D5F77BC-6
 		C:\Users\asashok\Downloads\Jenkinsfile = C:\Users\asashok\Downloads\Jenkinsfile
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3C9B3F9E-F3B6-4297-9F20-5D932CC8B32D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuyerServices", "BuyerServices", "{3C9B3F9E-F3B6-4297-9F20-5D932CC8B32D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Commerce.core.ServiceLayer", "ServiceLayer\E-Commerce.core.ServiceLayer.csproj", "{D1850392-B6D4-4EBF-8488-C2A679FE9118}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commence.BuyerServices.BuyerServiceLayer", "ServiceLayer\E-Commence.BuyerServices.BuyerServiceLayer.csproj", "{D1850392-B6D4-4EBF-8488-C2A679FE9118}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,39 +1,39 @@
 ﻿using AutoMapper;
-using Castle.Core.Resource;
-using E_Commerce.core.ApplicationLayer.DTOModel;
-using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
-using E_Commerce.core.ApplicationLayer.DTOModel.Order;
-using E_Commerce.core.ApplicationLayer.DTOModel.Product;
-using E_Commerce.core.ApplicationLayer.DTOModel.SubCategory;
-using E_Commerce.core.ApplicationLayer.Interface;
-using E_Commerce.core.DomainLayer.Entities;
 using Microsoft.EntityFrameworkCore;
-using NPOI.SS.Formula.Functions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using E_Commerce.core.DomainLayer.Entities;
+using E_Commerce.core.ApplicationLayer.Interface;
+using E_Commerce.core.ApplicationLayer.DTOModel.Order;
+using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
+
 
 namespace E_Commerce.infrastructure.RepositoryLayer.services
 {
     public class Order : IOrder
     {
         #region(Private Variables)
-        private readonly AdminDbContext _adminDbContext;
+
         private readonly IMapper _mapper;
+        private readonly AdminDbContext _adminDbContext;
+
         #endregion
 
         #region(Constructor)
         public Order(AdminDbContext adminDbContext, IMapper mapper)
         {
-            _adminDbContext = adminDbContext;
             _mapper = mapper;
+            _adminDbContext = adminDbContext;
         }
+
         #endregion
+
+        #region(Get Order Details)
+
+        /// <summary>  
+        /// Gets all data of order details 
+        /// </summary>  
+        /// <returns>collection of Products.</returns> 
         public ApiResponse<List<OrderListDTO>> Get()
         {
-
             ApiResponse<List<OrderListDTO>> response = new ApiResponse<List<OrderListDTO>>();
             var list = new List<OrderListDTO>();
             var data = _adminDbContext.Order.Include(x => x.CustomerModel).Include(y => y.ProductModel).ToList();
@@ -50,11 +50,9 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     orderListDTO.SalesforceOrderId = content.SalesforceOrderId;
                     orderListDTO.CustomerName = content.CustomerModel.CustomerName;
                     orderListDTO.ProductName = content.ProductModel.ProductName;
-
-
                     list.Add(orderListDTO);
                 }
-                response.Message = "Product Listed";
+                response.Message = "Order Listed";
                 response.Success = true;
                 response.Data = list;
                 return response;
@@ -66,12 +64,16 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 return response;
             }
         }
+        #endregion
+
+        #region(post)
+        /// <summary>  
+        ///  Add Order Details
+        /// </summary>  
+        /// <param Add Order details in database</param> 
 
         public ApiResponse<bool> Post(OrderDTO order)
         {
-
-
-
             var customerId = _adminDbContext.Customer.Where(x => x.CustomerId == order.CustomerId).FirstOrDefault();
             var productId = _adminDbContext.Product.Where(x => x.ProductId == order.ProductId).FirstOrDefault();
             ApiResponse<bool> Response = new ApiResponse<bool>();
@@ -79,7 +81,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 var orderModel = new OrderModel()
                 {
-
                     ProductId = productId.ProductId,
                     Status = order.Status,
                     OrderDate = order.OrderDate,
@@ -106,7 +107,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             return null;
 
         }
-
+        #endregion
 
     }
 }

@@ -1,11 +1,4 @@
 ﻿using E_Commerce.core.ApplicationLayer.BuyerModuleDTO;
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore.Migrations.Operations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Commerce.core.ApplicationLayer.Interface.Salesforce
 {
@@ -14,7 +7,7 @@ namespace E_Commerce.core.ApplicationLayer.Interface.Salesforce
         Task<AuthenticationRes> Authentication();
 
         public Task<BrandDTORes> AddBrand(BrandDTOReq brandDTOReq);
-       public Task<BrandDTORes> EditBrand(BrandDTOReq brandDTOReq, string id);
+        public Task<BrandDTORes> EditBrand(BrandDTOReq brandDTOReq, string id);
         public Task<BrandDTORes> DeleteBrand(string id);
 
         public Task<CategoryDTORes> AddCategory(CategoryDTOReq categoryDTOReq);

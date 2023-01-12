@@ -1,6 +1,4 @@
-﻿
-
-namespace E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response
+﻿namespace E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response
 {
     public class ApiResponseBase
     {

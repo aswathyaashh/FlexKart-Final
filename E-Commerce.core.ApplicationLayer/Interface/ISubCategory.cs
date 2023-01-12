@@ -1,5 +1,5 @@
-﻿using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
-using E_Commerce.core.ApplicationLayer.DTOModel.SubCategory;
+﻿using E_Commerce.core.ApplicationLayer.DTOModel.SubCategory;
+using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 
 namespace E_Commerce.core.ApplicationLayer.Interface
 {
@@ -7,7 +7,7 @@ namespace E_Commerce.core.ApplicationLayer.Interface
     {
         public ApiResponse<List<SubCategoryDTO>> Get();
         public ApiResponse<bool> Delete(int subCategoryId);
-        public ApiResponse<bool> GetBySubCategoryName(string Name, int id);
+        public ApiResponse<bool> GetBySubCategoryName(string Name, int categoryId);
         public Task<ApiResponse<bool>> Post(SubCategoryDTO subCategory);
         public Task<ApiResponse<bool>> Update(int id, SubCategoryDTO subCategory);
 

@@ -1,11 +1,5 @@
-﻿using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
-using E_Commerce.core.ApplicationLayer.DTOModel.Order;
-using E_Commerce.core.ApplicationLayer.DTOModel.SubCategory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using E_Commerce.core.ApplicationLayer.DTOModel.Order;
+using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 
 namespace E_Commerce.core.ApplicationLayer.Interface
 {

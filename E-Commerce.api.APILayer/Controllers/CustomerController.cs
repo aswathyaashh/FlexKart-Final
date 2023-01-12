@@ -1,12 +1,10 @@
-﻿using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
-using E_Commerce.core.ApplicationLayer.DTOModel;
-using E_Commerce.core.ApplicationLayer.Interface;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using System.Net.Mime;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Swashbuckle.AspNetCore.Annotations;
-using System.Net.Mime;
+using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.ApplicationLayer.DTOModel.Customer;
+using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 
 namespace E_Commerce.api.APILayer.Controllers
 {
@@ -24,7 +22,7 @@ namespace E_Commerce.api.APILayer.Controllers
             _customer = customer;
         }
 
-        #region(Get)
+        #region(GetCustomer)
 
         /// <summary>  
         /// API to Get all data  
@@ -35,16 +33,14 @@ namespace E_Commerce.api.APILayer.Controllers
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<List<CustomerDTO>>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Get all List", Description = "Get Customers List")]
-        public ApiResponse<List<CustomerListDTO>> Get()
+        public ApiResponse<List<CustomerListDTO>> GetCustomer()
         {
             return _customer.Get();
         }
 
         #endregion
 
-
-
-        #region(Post)
+        #region(PostCustomer)
         /// <summary>  
         ///  API for Adding customer   
         /// </summary>  
@@ -60,8 +56,5 @@ namespace E_Commerce.api.APILayer.Controllers
             return _customer.Post(customerDTO);
         }
         #endregion
-
-
-
     }
 }

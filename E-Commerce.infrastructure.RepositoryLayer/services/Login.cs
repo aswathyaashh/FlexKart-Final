@@ -7,35 +7,46 @@ using Microsoft.Extensions.Configuration;
 using E_Commerce.core.DomainLayer.Entities;
 using E_Commerce.core.ApplicationLayer.Interface;
 using E_Commerce.core.ApplicationLayer.DTOModel.Login;
-using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
-using E_Commerce.core.ApplicationLayer.DTOModel;
+
 
 namespace E_Commerce.infrastructure.RepositoryLayer.services
 {
     public class Login : ILogin
     {
+        #region(Private Variables)
+
         private readonly AdminDbContext _admincontext;
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
 
+        #endregion
+
+        #region(Constructor)
         public Login(AdminDbContext adminDbContext, IConfiguration iconfiguration, IMapper mapper)
         {
             _admincontext = adminDbContext;
             _configuration = iconfiguration;
             _mapper = mapper;
         }
+        #endregion
+
+        #region(Login)
+
+        /// <summary>
+        /// Login Fucntion 
+        /// Here we use email, and password to login to dashboard page
+        /// </summary>
+        /// <returns></returns>
         public LoginResponseDTO LoginCheck(LoginDTO login)
         {
             LoginDTO loginModel = _mapper.Map<LoginModel, LoginDTO>(_admincontext.Login.FirstOrDefault(i => i.EmailId == login.EmailId));
-            if(loginModel != null)
+            if (loginModel != null)
             {
-
-                { 
+                {
                     if (loginModel.Password == login.Password)
-
-                    {                       
-                        var check = _mapper.Map<LoginModel, LoginDTO>(_admincontext.Login.FirstOrDefault(i => i.EmailId == login.EmailId));
-                        var modifyDate = _mapper.Map<LoginDTO, LoginModel>(check);
+                    {
+                        var loginData = _mapper.Map<LoginModel, LoginDTO>(_admincontext.Login.FirstOrDefault(i => i.EmailId == login.EmailId));
+                        var modifyDate = _mapper.Map<LoginDTO, LoginModel>(loginData);
                         modifyDate.ModifiedDate = DateTime.Now;
                         _admincontext.SaveChanges();
                         return new LoginResponseDTO()
@@ -54,26 +65,22 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                             Message = "Password is incorrect"
                         };
                     }
-
-
-
-                }  
-            }
-
-             else 
-                  {
-                    return new LoginResponseDTO()
-                    {
-                        Success = false,
-                        Message = "Email Incorrect"
-
-                    };
-
                 }
+            }
+            else
+            {
+                return new LoginResponseDTO()
+                {
+                    Success = false,
+                    Message = "Email Incorrect"
+
+                };
+            }
         }
-       
-        
-#region
+
+        #endregion
+
+        #region
         /// <summary>
         /// Token creation 
         /// Here we use email, role and expiryDate for generating token
@@ -88,15 +95,15 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 new Claim(ClaimTypes.Role, "Admin")
             };
             SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+            var security = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
             var token = new JwtSecurityToken(
                 claims: claims,
                 expires: DateTime.UtcNow.AddMinutes(60),
-                signingCredentials: creds);
-                var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+                signingCredentials: security);
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
             return jwt;
         }
-#endregion
+        #endregion
     }
 }
 

@@ -1,17 +1,10 @@
-﻿using E_Commerce.core.ApplicationLayer.DTOModel.Image;
-using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
+using E_Commerce.core.ApplicationLayer.DTOModel.Image;
 
 namespace E_Commerce.core.ApplicationLayer.DTOModel.Product
 {
     public class ProductDTO
     {
-       // public int ProductId { get; set; }
         public string ProductName { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
@@ -21,7 +14,6 @@ namespace E_Commerce.core.ApplicationLayer.DTOModel.Product
         public int BrandId { get; set; }
         public string SalesForceId { get; set; }
         public List<IFormFile> productImage { get; set; }
-        
         public List<ImageDTO> Image { get; set; }
 
 
