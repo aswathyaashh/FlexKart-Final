@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\E-Commerce.core.ApplicationLayer\E-Commerce.core.ApplicationLayer.csproj" />
-    <ProjectReference Include="..\E-Commerce.infrastructure.RepositoryLayer\E-Commerce.infrastructure.RepositoryLayer.csproj" />
+    <ProjectReference Include="..\E-Commerce.infrastructure.RepositoryLayer\E-Commerce.Infrastructure.RepositoryLayer.csproj" />
   </ItemGroup>
 
 </Project>

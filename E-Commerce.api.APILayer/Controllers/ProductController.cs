@@ -31,7 +31,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// <returns>API for calling function to list products with their id</returns>  
         [HttpGet]
         [Route("get")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<List<ProductListDTO>>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Get all List", Description = "Get Product List")]
@@ -49,7 +48,6 @@ namespace E_Commerce.api.APILayer.Controllers
         [HttpPost]
         [Route("AddProduct")]
         [Consumes("multipart/form-data")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Posts new Product", Description = "Adds a new Product")]
@@ -67,7 +65,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// </summary>  
         /// <param API for setting status field in database as one when product deleted</param> 
         [HttpDelete]
-        [AllowAnonymous]
         [Route("delete/{productId}")]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
@@ -84,7 +81,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// </summary>  
         /// <param Display product exist if it is product existing otherwise product doesnt exists </param> 
         [HttpGet]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Gets product By Name", Description = "Checks if product exists")]
@@ -101,7 +97,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// <param Display product details by id </param> 
         [HttpGet]
         [Route("getById")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Product View", Description = "Display product details by its id")]
@@ -119,7 +114,6 @@ namespace E_Commerce.api.APILayer.Controllers
         [HttpPut]
         [Route("EditProduct/{id}")]
         [Consumes("multipart/form-data")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Edit new product", Description = "Edit a new product")]
@@ -138,7 +132,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// <param Display subcategory details by category id </param> 
         [HttpGet]
         [Route("getBySubcategory")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Subcategory listing", Description = "Display product details by its id")]

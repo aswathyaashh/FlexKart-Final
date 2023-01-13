@@ -29,7 +29,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// </summary>  
         /// <returns>API for calling function to list customers with their id</returns>  
         [HttpGet]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<List<CustomerDTO>>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Get all List", Description = "Get Customers List")]
@@ -47,7 +46,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// <param API to add customer name in database</param> 
         [HttpPost("Add")]
         [Route("Add")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Posts new customer", Description = "Adds a new customer")]

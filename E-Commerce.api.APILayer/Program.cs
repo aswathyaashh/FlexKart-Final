@@ -77,10 +77,16 @@ builder.Services.AddScoped<IProduct, Product>();
 builder.Services.AddScoped<IOrder, Order>();
 builder.Services.AddScoped<ICustomer, Customer>();
 builder.Services.AddScoped<IBuyerService, BuyerService>();
+
+
 builder.Services.AddCors(p => p.AddPolicy(MyAllowSpecificOrigins, builder =>
 {
     builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
+
+
+
+
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())

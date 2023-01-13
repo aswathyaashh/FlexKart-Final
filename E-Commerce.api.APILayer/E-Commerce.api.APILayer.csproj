@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\E-Commerce.infrastructure.RepositoryLayer\E-Commerce.infrastructure.RepositoryLayer.csproj" />
+    <ProjectReference Include="..\E-Commerce.infrastructure.RepositoryLayer\E-Commerce.Infrastructure.RepositoryLayer.csproj" />
     <ProjectReference Include="..\ServiceLayer\E-Commence.BuyerServices.BuyerServiceLayer.csproj" />
   </ItemGroup>
 

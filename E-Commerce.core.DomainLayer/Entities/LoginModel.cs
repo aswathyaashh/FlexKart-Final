@@ -1,21 +1,16 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace E_Commerce.core.DomainLayer.Entities
 {
     public class LoginModel
     {
         [Key]
-        //[Required]
         [EmailAddress(ErrorMessage = "*EmailId should be in the format adc@gmail.com")]
         public string EmailId { get; set; }
 
         [StringLength(30, MinimumLength = 3)]
         public string Password { get; set; }
-        //public int id { get; set; }
-
-
+ 
         public DateTime? CreatedDate { get; set; }
 
         public DateTime? ModifiedDate { get; set; }

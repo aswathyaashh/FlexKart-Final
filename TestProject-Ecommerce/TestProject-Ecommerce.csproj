@@ -29,7 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\E-Commerce.core.DomainLayer\E-Commerce.core.DomainLayer.csproj" />
-    <ProjectReference Include="..\E-Commerce.infrastructure.RepositoryLayer\E-Commerce.infrastructure.RepositoryLayer.csproj" />
+    <ProjectReference Include="..\E-Commerce.infrastructure.RepositoryLayer\E-Commerce.Infrastructure.RepositoryLayer.csproj" />
   </ItemGroup>
 
 </Project>

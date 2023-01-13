@@ -4825,9 +4825,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.infrastructure.RepositoryLayer.csproj",
-      "projectName": "E-Commerce.infrastructure.RepositoryLayer",
-      "projectPath": "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.infrastructure.RepositoryLayer.csproj",
+      "projectUniqueName": "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.Infrastructure.RepositoryLayer.csproj",
+      "projectName": "E-Commerce.Infrastructure.RepositoryLayer",
+      "projectPath": "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.Infrastructure.RepositoryLayer.csproj",
       "packagesPath": "C:\\Users\\asashok\\.nuget\\packages\\",
       "outputPath": "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\obj\\",
       "projectStyle": "PackageReference",

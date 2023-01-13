@@ -29,7 +29,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// <returns>API for calling function to list subcategories with their id</returns>  
         [HttpGet]
         [Route("get")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<List<SubCategoryDTO>>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Get all List", Description = "Get SubCategory List")]
@@ -45,7 +44,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// </summary>  
         /// <param API for setting status field in database as one when subcategory deleted</param> 
         [HttpDelete]
-        [AllowAnonymous]
         [Route("delete/{subCategoryId}")]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
@@ -63,7 +61,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// <param API to add subcategory name in database</param> 
         [HttpPost]
         [Route("Post")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Posts new subcategory", Description = "Adds a new SubCategory")]
@@ -79,8 +76,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// </summary>  
         /// <param Display subcategory exist if it is subcategory existing otherwise SubCategory doesnt exists </param> 
         [HttpGet]
-        [AllowAnonymous]
-       // [Route("SubCategoryName/{subcategoryName}")]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Gets SubCategory By Name", Description = "Checks if subcategory exists")]
@@ -97,7 +92,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// <param API to edit subcategory name in database</param> 
         [HttpPut]
         [Route("Edit")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Edit new subcategory", Description = "Edit a new subCategory")]

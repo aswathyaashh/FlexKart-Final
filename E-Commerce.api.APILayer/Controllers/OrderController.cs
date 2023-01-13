@@ -29,7 +29,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// <returns>API for calling function to list orders with their id</returns>  
         [HttpGet]
         [Route("get")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<List<OrderDTO>>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Get all List", Description = "Get order List")]
@@ -46,7 +45,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// <param API to add order name in database</param> 
         [HttpPost]
         [Route("AddOrder")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Posts new order", Description = "Adds a new order")]

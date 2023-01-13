@@ -1513,7 +1513,7 @@
           "bin/placeholder/E-Commerce.core.DomainLayer.dll": {}
         }
       },
-      "E-Commerce.infrastructure.RepositoryLayer/1.0.0": {
+      "E-Commerce.Infrastructure.RepositoryLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -1531,10 +1531,10 @@
           "Swashbuckle.AspNetCore.Annotations": "6.4.0"
         },
         "compile": {
-          "bin/placeholder/E-Commerce.infrastructure.RepositoryLayer.dll": {}
+          "bin/placeholder/E-Commerce.Infrastructure.RepositoryLayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/E-Commerce.infrastructure.RepositoryLayer.dll": {}
+          "bin/placeholder/E-Commerce.Infrastructure.RepositoryLayer.dll": {}
         }
       }
     }
@@ -4446,16 +4446,16 @@
       "path": "../E-Commerce.core.DomainLayer/E-Commerce.core.DomainLayer.csproj",
       "msbuildProject": "../E-Commerce.core.DomainLayer/E-Commerce.core.DomainLayer.csproj"
     },
-    "E-Commerce.infrastructure.RepositoryLayer/1.0.0": {
+    "E-Commerce.Infrastructure.RepositoryLayer/1.0.0": {
       "type": "project",
-      "path": "../E-Commerce.infrastructure.RepositoryLayer/E-Commerce.infrastructure.RepositoryLayer.csproj",
-      "msbuildProject": "../E-Commerce.infrastructure.RepositoryLayer/E-Commerce.infrastructure.RepositoryLayer.csproj"
+      "path": "../E-Commerce.infrastructure.RepositoryLayer/E-Commerce.Infrastructure.RepositoryLayer.csproj",
+      "msbuildProject": "../E-Commerce.infrastructure.RepositoryLayer/E-Commerce.Infrastructure.RepositoryLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "E-Commerce.Infrastructure.RepositoryLayer >= 1.0.0",
       "E-Commerce.core.ApplicationLayer >= 1.0.0",
-      "E-Commerce.infrastructure.RepositoryLayer >= 1.0.0",
       "Newtonsoft.Json >= 13.0.2"
     ]
   },
@@ -4489,8 +4489,8 @@
             "D:\\TeamProject\\CopyNew\\E-Commerce.core.ApplicationLayer\\E-Commerce.core.ApplicationLayer.csproj": {
               "projectPath": "D:\\TeamProject\\CopyNew\\E-Commerce.core.ApplicationLayer\\E-Commerce.core.ApplicationLayer.csproj"
             },
-            "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.infrastructure.RepositoryLayer.csproj": {
-              "projectPath": "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.infrastructure.RepositoryLayer.csproj"
+            "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.Infrastructure.RepositoryLayer.csproj": {
+              "projectPath": "D:\\TeamProject\\CopyNew\\E-Commerce.infrastructure.RepositoryLayer\\E-Commerce.Infrastructure.RepositoryLayer.csproj"
             }
           }
         }

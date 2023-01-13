@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace E_Commerce.core.DomainLayer.Entities
 {
@@ -10,8 +10,8 @@ namespace E_Commerce.core.DomainLayer.Entities
         [StringLength(30, MinimumLength = 3)]
         public string SubCategoryName { get; set; }
         public int Status { get; set; }
-        public DateTime? CreatedDate { get; set; } = DateTime.UtcNow;
-        public DateTime? UpdatedDate { get; set; } = DateTime.UtcNow;
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; } 
        
         [ForeignKey("CategoryModel")]
         public int CategoryId { get; set; }

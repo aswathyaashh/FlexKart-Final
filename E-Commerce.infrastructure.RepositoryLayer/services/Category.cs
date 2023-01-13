@@ -185,7 +185,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         ///  Edit Category by id  
         /// </summary>  
         /// <param edit category name in database</param> 
-        public async Task<ApiResponse<bool>> Update(int id, [FromBody] CategoryDTO categoryDTO)
+        public async Task<ApiResponse<bool>> Update(int id,CategoryDTO categoryDTO)
         {
             var update = _adminDbContext.Category.FirstOrDefault(e => e.CategoryId == id);
             ApiResponse<bool> updateResponse = new ApiResponse<bool>();

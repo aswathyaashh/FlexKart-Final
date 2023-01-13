@@ -104,8 +104,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 Response.Data = false;
                 return Response;
             }
-            return null;
-
         }
         #endregion
 

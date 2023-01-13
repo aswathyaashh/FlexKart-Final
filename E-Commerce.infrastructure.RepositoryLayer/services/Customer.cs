@@ -45,7 +45,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 response.Success = false;
                 return response;
             }
-            return null;
         }
         #endregion
 
@@ -78,7 +77,6 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 return addResponse;
 
             }
-            return null;
         }
         #endregion
 

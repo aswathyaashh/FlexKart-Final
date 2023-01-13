@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "LxM3jzGyMPg5tgORTgHW36hnl13RlaHkH3ynp4Z69o0=",
-  "Source": "E-Commerce.api.APILayer",
-  "BasePath": "_content/E-Commerce.api.APILayer",
+  "Hash": "xRRzvpNty1iX3tj1/uzC4AQzl6V/VyYq12ROTvz6zjo=",
+  "Source": "E-Commerce.API.APILayer",
+  "BasePath": "_content/E-Commerce.API.APILayer",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

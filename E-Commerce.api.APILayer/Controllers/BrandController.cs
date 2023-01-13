@@ -8,7 +8,7 @@ using E_Commerce.core.ApplicationLayer.DTOModel.Generic_Response;
 namespace E_Commerce.api.APILayer.Controllers
 {
     [Route("api/[controller]")]
-    
+    [Authorize]
     [ApiController]
     public class BrandController : ControllerBase
     {
@@ -79,7 +79,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// <param API to Edit brand name and logo path in database</param>
         [HttpPut]
         [Route("EditBrand")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Update brand by Id", Description = "success true if brand not exist")]
@@ -99,7 +98,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// </summary>  
         /// <param API for setting status field in database as one when brand deleted</param> 
         [HttpDelete]
-        [AllowAnonymous]
         [Route("delete/{brandId}")]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]

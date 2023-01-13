@@ -28,7 +28,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// </summary>  
         /// <returns>API for calling function to list categories with their id</returns>  
         [HttpGet]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<List<CategoryDTO>>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Get all List", Description = "Get Category List")]
@@ -45,7 +44,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// </summary>  
         /// <param API for setting status field in database as one when category deleted</param> 
         [HttpDelete]
-        [AllowAnonymous]
         [Route("delete/{categoryId}")]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
@@ -62,7 +60,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// </summary>  
         /// <param Display category exist if it is category existing otherwise Category doesnt exists </param> 
         [HttpGet]
-        [AllowAnonymous]
         [Route("CategoryName/{categoryName}")]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
@@ -80,7 +77,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// <param API to add category name in database</param> 
         [HttpPost("Add")]
         [Route("Add")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Posts new category", Description = "Adds a new Category")]
@@ -97,7 +93,6 @@ namespace E_Commerce.api.APILayer.Controllers
         /// <param API to edit category name in database</param> 
         [HttpPut("{id}")]
         [Route("Edit/{CategoryId}")]
-        [AllowAnonymous]
         [SwaggerResponse(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse<bool>), StatusCodes.Status200OK)]
         [SwaggerOperation(Summary = "Edit new category", Description = "Edit a new Category")]

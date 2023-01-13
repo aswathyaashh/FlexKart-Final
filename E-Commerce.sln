@@ -11,11 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.core.DomainLayer
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{9476CCB4-C8B5-4F27-AE28-D54A5C91D564}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.infrastructure.RepositoryLayer", "E-Commerce.infrastructure.RepositoryLayer\E-Commerce.infrastructure.RepositoryLayer.csproj", "{55CEACB3-7BB1-4096-8825-A71783444A20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.Infrastructure.RepositoryLayer", "E-Commerce.infrastructure.RepositoryLayer\E-Commerce.Infrastructure.RepositoryLayer.csproj", "{55CEACB3-7BB1-4096-8825-A71783444A20}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{A9AD7073-C277-47F5-9506-1E8785518E42}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.api.APILayer", "E-Commerce.api.APILayer\E-Commerce.api.APILayer.csproj", "{E0CC4B03-8308-4841-AC04-E26E760A66A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.API.APILayer", "E-Commerce.api.APILayer\E-Commerce.API.APILayer.csproj", "{E0CC4B03-8308-4841-AC04-E26E760A66A4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-Commerce.core.ApplicationLayer", "E-Commerce.core.ApplicationLayer\E-Commerce.core.ApplicationLayer.csproj", "{1CCCB6BC-946D-457C-81D4-D6352C961999}"
 EndProject

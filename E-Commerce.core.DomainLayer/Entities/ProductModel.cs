@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_Commerce.core.DomainLayer.Entities
 {
@@ -18,22 +13,11 @@ namespace E_Commerce.core.DomainLayer.Entities
         public string ProductName { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
-
-        [StringLength(150, MinimumLength = 3)]
         public string Description { get; set; }
         public int Status { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
-        public DateTime UpdatedDate { get; set; } = DateTime.UtcNow;
-        public ProductModel()
-        {
-            //CreatedDate = DateTime.UtcNow;
-            //UpdatedDate = DateTime.UtcNow;
-        }
-
-        //[ForeignKey("CategoryModel")]
-        //public int CategoryId { get; set; }
-        //public CategoryModel CategoryModel { get; set; }
-
+        public DateTime CreatedDate { get; set; } 
+        public DateTime UpdatedDate { get; set; }
+        
         [ForeignKey("SubCategoryModel")]
         public int SubCategoryId { get; set; }
         public SubCategoryModel SubCategoryModel { get; set; }
@@ -44,7 +28,6 @@ namespace E_Commerce.core.DomainLayer.Entities
 
         [StringLength(30, MinimumLength = 3)]
         public string SalesForceId { get; set; }
-
 
     }
 }

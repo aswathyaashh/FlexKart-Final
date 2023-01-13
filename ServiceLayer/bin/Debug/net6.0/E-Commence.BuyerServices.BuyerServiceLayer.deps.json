@@ -8,8 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "E-Commence.BuyerServices.BuyerServiceLayer/1.0.0": {
         "dependencies": {
+          "E-Commerce.Infrastructure.RepositoryLayer": "1.0.0",
           "E-Commerce.core.ApplicationLayer": "1.0.0",
-          "E-Commerce.infrastructure.RepositoryLayer": "1.0.0",
           "Newtonsoft.Json": "13.0.2"
         },
         "runtime": {
@@ -908,7 +908,7 @@
           "E-Commerce.core.DomainLayer.dll": {}
         }
       },
-      "E-Commerce.infrastructure.RepositoryLayer/1.0.0": {
+      "E-Commerce.Infrastructure.RepositoryLayer/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "E-Commerce.core.ApplicationLayer": "1.0.0",
@@ -924,7 +924,7 @@
           "Swashbuckle.AspNetCore.Annotations": "6.4.0"
         },
         "runtime": {
-          "E-Commerce.infrastructure.RepositoryLayer.dll": {}
+          "E-Commerce.Infrastructure.RepositoryLayer.dll": {}
         }
       }
     }
@@ -1561,7 +1561,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "E-Commerce.infrastructure.RepositoryLayer/1.0.0": {
+    "E-Commerce.Infrastructure.RepositoryLayer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
