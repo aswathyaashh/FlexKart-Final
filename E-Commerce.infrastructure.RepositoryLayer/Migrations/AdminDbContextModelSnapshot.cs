@@ -74,7 +74,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("SalesForceId")
@@ -84,7 +84,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("UpdatedDate")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("CategoryId");
@@ -228,7 +228,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                     b.Property<int>("BrandId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
@@ -254,7 +254,7 @@ namespace ECommerce.infrastructure.RepositoryLayer.Migrations
                     b.Property<int>("SubCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("UpdatedDate")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("ProductId");

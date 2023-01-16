@@ -10,9 +10,9 @@ namespace E_Commerce.core.DomainLayer.Entities
         [StringLength(30, MinimumLength = 3)]
         public string SubCategoryName { get; set; }
         public int Status { get; set; }
-        public DateTime? CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; } 
         public DateTime? UpdatedDate { get; set; } 
-       
+
         [ForeignKey("CategoryModel")]
         public int CategoryId { get; set; }
         public CategoryModel CategoryModel { get; set; }

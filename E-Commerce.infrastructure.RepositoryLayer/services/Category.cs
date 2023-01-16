@@ -56,7 +56,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
         }
         #endregion
 
-        #region(get Category By Name)
+        #region(GetCategory By Name)
         /// <summary>  
         ///  Get Category by name  
         /// </summary>  
@@ -105,6 +105,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             {
                 CategoryName = categoryDTO.CategoryName
             };
+            categoryModel.CreatedDate = DateTime.Now;
             _adminDbContext.Category.Add(categoryModel);
             _adminDbContext.SaveChanges();
             CategoryDTOReq categoryDTOReq = new CategoryDTOReq();
@@ -151,7 +152,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 if (category.Status == 0)
                 {
                     category.Status = 1;
-                    category.UpdatedDate = DateTime.Now;
+                    category.UpdatedDate = DateTime.UtcNow;
                     _adminDbContext.Category.Update(category);
                     _adminDbContext.SaveChanges();
                     CategoryDTOReq categoryDTOReq = new CategoryDTOReq();
@@ -202,6 +203,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                 updateResponse.Success = true;
                 updateResponse.Message = "Category is updated";
                 updateResponse.Data = true;
+                update.UpdatedDate= DateTime.Now;
                 update.CategoryName = categoryDTO.CategoryName;
                 _adminDbContext.Update(update);
                 _adminDbContext.SaveChanges();

@@ -128,7 +128,7 @@ namespace ServiceLayer
             var authenticationRes = await Authentication();
             var buyerConfig = _configuration.GetSection("BuyerConfig");
             string url = buyerConfig.GetSection("BaseUrl").Value;
-            string postUrl = url + "Brand_FK__c";
+            string postUrl = url + "Category__c";
             var payload = JsonConvert.SerializeObject(categoryDTOReq);
             using StringContent content = new StringContent(payload, Encoding.UTF8, "application/json");
             using var client = new HttpClient();
@@ -272,12 +272,13 @@ namespace ServiceLayer
         {
             var authenticationRes = await Authentication();
             var buyerConfig = _configuration.GetSection("BuyerConfig");
-            string url = buyerConfig.GetSection("ProductAddUrl").Value;
+            string url = buyerConfig.GetSection("BaseUrl").Value;
+            string postUrl = url + "Product__c";
             var payload = JsonConvert.SerializeObject(productDTOReq);
             using StringContent content = new StringContent(payload, Encoding.UTF8, "application/json");
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {authenticationRes.access_token}");
-            using HttpResponseMessage httpResponse = await client.PostAsync(url, content);
+            using HttpResponseMessage httpResponse = await client.PostAsync(postUrl, content);
 
             if (httpResponse.StatusCode == HttpStatusCode.OK ||
                 httpResponse.StatusCode == HttpStatusCode.Accepted || httpResponse.StatusCode == HttpStatusCode.Created)
@@ -295,8 +296,8 @@ namespace ServiceLayer
         {
             var authenticationRes = await Authentication();
             var buyerConfig = _configuration.GetSection("BuyerConfig");
-            string url = buyerConfig.GetSection("ProductEditUrl").Value;
-            string postUrl = url + id;
+            string url = buyerConfig.GetSection("BaseUrl").Value;
+            string postUrl = url + "Product__c/" + id;
             var payload = JsonConvert.SerializeObject(productDTOReq);
             using StringContent content = new StringContent(payload, Encoding.UTF8, "application/json");
             using var client = new HttpClient();
@@ -319,8 +320,8 @@ namespace ServiceLayer
         {
             var authenticationRes = await Authentication();
             var buyerConfig = _configuration.GetSection("BuyerConfig");
-            string url = buyerConfig.GetSection("ProductDeleteUrl").Value;
-            string postUrl = url + id;
+            string url = buyerConfig.GetSection("BaseUrl").Value;
+            string postUrl = url + "Product__c/" + id;
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {authenticationRes.access_token}");
             using HttpResponseMessage httpResponse = await client.DeleteAsync(postUrl);

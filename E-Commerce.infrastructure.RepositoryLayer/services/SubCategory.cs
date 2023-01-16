@@ -118,6 +118,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     SubCategoryName = subCategory.SubCategoryName,
                     CategoryId = categoryId.CategoryId
                 };
+                subCategoryModel.CreatedDate= DateTime.Now;
                 _adminDbContext.Add(subCategoryModel);
                 _adminDbContext.SaveChanges();
                 SubCategoryDTOReq subCategoryDTOReq = new SubCategoryDTOReq();
@@ -175,6 +176,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     updateResponse.Success = true;
                     updateResponse.Message = "Updated";
                     updateResponse.Data = true;
+                    update.UpdatedDate = DateTime.Now;
                     update.SubCategoryName = subCategory.SubCategoryName;
                     update.CategoryId = categoryId.CategoryId;
                     _adminDbContext.Update(update);

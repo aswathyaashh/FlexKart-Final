@@ -26,9 +26,9 @@ namespace E_Commerce.core.DomainLayer.Entities
         [NotMapped]
         public string ImageSrc { get; set; }
         public int Status { get; set; }
-        public DateTime? CreatedDate { get; set; }
-        public DateTime? UpdatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; } = DateTime.UtcNow;
+        public DateTime? UpdatedDate { get; set; } = DateTime.UtcNow;
 
-       
+
     }
 }

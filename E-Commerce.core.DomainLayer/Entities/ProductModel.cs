@@ -15,9 +15,9 @@ namespace E_Commerce.core.DomainLayer.Entities
         public int Quantity { get; set; }
         public string Description { get; set; }
         public int Status { get; set; }
-        public DateTime CreatedDate { get; set; } 
-        public DateTime UpdatedDate { get; set; }
-        
+        public DateTime? CreatedDate { get; set; }= DateTime.UtcNow;
+        public DateTime? UpdatedDate { get; set; } = DateTime.UtcNow;
+
         [ForeignKey("SubCategoryModel")]
         public int SubCategoryId { get; set; }
         public SubCategoryModel SubCategoryModel { get; set; }

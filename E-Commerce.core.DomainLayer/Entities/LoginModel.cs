@@ -10,16 +10,11 @@ namespace E_Commerce.core.DomainLayer.Entities
 
         [StringLength(30, MinimumLength = 3)]
         public string Password { get; set; }
- 
-        public DateTime? CreatedDate { get; set; }
 
-        public DateTime? ModifiedDate { get; set; }
+        public DateTime? CreatedDate { get; set; } = DateTime.UtcNow;
+
+        public DateTime? ModifiedDate { get; set; } = DateTime.UtcNow;
         public int Status { get; set; }
-        public LoginModel()
-        {
-            CreatedDate = DateTime.UtcNow;
-            ModifiedDate = DateTime.UtcNow;
-        }
-
+        
     }
 }

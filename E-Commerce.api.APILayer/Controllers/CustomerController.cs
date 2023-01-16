@@ -39,7 +39,7 @@ namespace E_Commerce.api.APILayer.Controllers
 
         #endregion
 
-        #region(PostCustomer)
+        #region(AddCustomer)
         /// <summary>  
         ///  API for Adding customer   
         /// </summary>  

@@ -27,10 +27,10 @@ namespace E_Commerce.core.DomainLayer.Entities
         [Column(Order = 3)]
         public int Status { get; set; }
         [Column(Order = 4)]
-        public DateTime? CreatedDate { get; set; }
+        public DateTime? CreatedDate { get; set; } 
         [Column(Order = 5)]
-        public DateTime? UpdatedDate { get; set; }
-       
+        public DateTime? UpdatedDate { get; set; } 
+
         [StringLength(30, MinimumLength = 3)]
         public string SalesForceId { get; set; }
     }

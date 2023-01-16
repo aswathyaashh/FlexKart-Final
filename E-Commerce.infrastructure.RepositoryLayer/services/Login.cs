@@ -47,7 +47,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
                     {
                         var loginData = _mapper.Map<LoginModel, LoginDTO>(_admincontext.Login.FirstOrDefault(i => i.EmailId == login.EmailId));
                         var modifyDate = _mapper.Map<LoginDTO, LoginModel>(loginData);
-                        modifyDate.ModifiedDate = DateTime.Now;
+                        modifyDate.ModifiedDate = DateTime.UtcNow;
                         _admincontext.SaveChanges();
                         return new LoginResponseDTO()
                         {
@@ -80,7 +80,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
 
         #endregion
 
-        #region
+        #region(Token)
         /// <summary>
         /// Token creation 
         /// Here we use email, role and expiryDate for generating token
@@ -98,7 +98,7 @@ namespace E_Commerce.infrastructure.RepositoryLayer.services
             var security = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
             var token = new JwtSecurityToken(
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(60),
+                expires: DateTime.UtcNow.AddYears(1),
                 signingCredentials: security);
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);
             return jwt;

@@ -9,9 +9,9 @@ namespace E_Commerce.core.DomainLayer.Entities
         [StringLength(30, MinimumLength = 3)]
         public string CategoryName { get; set; }
         public int Status { get; set; }
-        public DateTime CreatedDate { get; set; } 
-        public DateTime UpdatedDate { get; set; }
-        
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; } 
+
         [StringLength(30, MinimumLength = 3)]
         public string SalesForceId { get; set; }
 
